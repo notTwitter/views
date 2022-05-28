@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Auth from "./Auth/Auth";
+import HomeLayout from "./Layout/HomeLayout/HomeLayout";
 import Layout from "./Layout/Layout";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
@@ -12,7 +13,9 @@ const App: FC = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<Auth />}>
-              <Route index element={<Home />} />
+              <Route path="/" element={<HomeLayout />}>
+                <Route index element={<Home />} />
+              </Route>
             </Route>
 
             {/* Unprotected path */}

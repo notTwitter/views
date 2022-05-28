@@ -1,7 +1,12 @@
 import { FC } from "react";
+import * as S from './Home.css'
 
 const Home: FC = () => {
-  return <div>Home</div>;
+  return (
+    <>
+      Home
+    </>
+  )
 };
 
 export default Home;
