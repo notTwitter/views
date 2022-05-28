@@ -11,16 +11,16 @@ const App: FC = () => {
       <BrowserRouter>
         <Routes>
           <Route>
-              <Route path="/" element={<Auth />}>
-                <Route path="" element={<HomeLayout />}>
-                  <Route index element={<Home />} />
-                  <Route path='notifications' element={null}/>
-                  <Route path='messages' element={null}/>
-                  <Route path='profile' element={null}/>
-                  <Route path='more' element={null}/>
-                </Route>        
+            <Route path="/" element={<Auth />}>
+              <Route path="" element={<HomeLayout />}>
+                <Route index element={<Home />} />
+                <Route path="notifications" element={null} />
+                <Route path="messages" element={null} />
+                <Route path="profile" element={null} />
+                <Route path="more" element={null} />
               </Route>
-        
+            </Route>
+
             {/* Unprotected path */}
             <Route path="login" element={<Login />} />
           </Route>
