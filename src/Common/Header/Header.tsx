@@ -1,13 +1,16 @@
 import { FC } from "react";
 import {Link} from 'react-router-dom'
 import * as S from './Header.css'
+import twitterIcon from './../../Assets/twitterIcon.png'
 
 const Header: FC = () => {
   return (
     <>
     <S.Header className="center">
       <S.Nav>
-         <S.Logo></S.Logo>
+         <S.Logo className="center">
+            <img src={twitterIcon} alt="" />
+         </S.Logo>
          <S.UL>
           <S.LI><S.NavLink to=''>Home</S.NavLink></S.LI>
           <S.LI><S.NavLink to='/notifications'>Notifications</S.NavLink></S.LI>
