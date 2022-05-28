@@ -3,14 +3,15 @@
   padding: 0;
   font-size: 16px;
   font-weight: normal;
-  color: black;
   text-decoration: none;
   list-style: none;
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: "Hind Siliguri", sans-serif;
 }
 
-html{
-  display: flex; align-items: center; justify-content: center;
+html {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
   background-color: white;
 }
 
-#root{
+#root {
   position: relative;
   width: 100%;
   min-height: 100vh;
