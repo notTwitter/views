@@ -1,8 +1,15 @@
 import React from 'react'
 
 const index = () => {
+
+  const login = () => {
+    fetch('http://localhost:80/test/login')
+  }
+
   return (
-    <div>index</div>
+    <div> 
+      <button onClick={()=> login()}>Login</button>
+    </div>
   )
 }
 
