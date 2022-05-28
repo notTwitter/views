@@ -1,12 +1,25 @@
-import { FC } from "react";
-import { Outlet } from "react-router-dom";
+import { FC, useEffect, useState } from "react";
+import { useNavigate, Outlet } from "react-router-dom";
 
 const Auth: FC = () => {
-  return (
+
+  //State   !!!Warning. I'm not sure Whether using state here is the best practice. 
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  //Checking backend
+  fetch('http://localhost/test/checkAuth', {credentials: 'include'})
+  .then(res=> {return res.json()})
+  .then(data=> {setIsLoggedIn(data.isLoggedIn)})
+    
+  return(
     <>
-      <Outlet />
+    {
+    isLoggedIn
+      ? <Outlet/>
+      : <>Nah Uh</>
+    }
     </>
-  );
+  )
 };
 
 export default Auth;

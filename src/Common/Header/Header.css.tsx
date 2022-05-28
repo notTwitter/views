@@ -38,13 +38,12 @@ export const Logo = styled.div`
   overflow: hidden;
   flex-shrink: 0;
   & img{
-    height: 60%;
+    height: 55%;
   }
 `;
 
 
 export const UL = styled.ul`
-  margin-top: max(1vw, 10px);
   width: 100%;
   height: auto;
   display: flex; flex-direction: column;
