@@ -1,5 +1,5 @@
-import { FC, useEffect, useState } from "react";
-import { useNavigate, Outlet } from "react-router-dom";
+import { FC, useState } from "react";
+import { Outlet } from "react-router-dom";
 
 const Auth: FC = () => {
   //State   !!!Warning. I'm not sure Whether using state here is the best practice.

@@ -1,29 +1,19 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
-import * as S from "./SideMenu.css";
-import twitterIcon from "./../../Assets/twitterIcon.png";
-import homeIcon from "./../../Assets/homeIcon.png";
-import notificationsIconDark from "./../../Assets/notificationsIconDark.png";
-import messagesIconDark from "./../../Assets/messagesIconDark.png";
-import accountIconDark from "./../../Assets/accountIconDark.png";
-import moreIconDark from "./../../Assets/moreIconDark.png";
-
+import { AiFillBell, AiOutlineBell } from "react-icons/ai";
+import {
+  HiDotsCircleHorizontal,
+  HiOutlineDotsCircleHorizontal,
+} from "react-icons/hi";
+import { MdPerson, MdPersonOutline } from "react-icons/md";
+import {
+  RiChat1Fill,
+  RiChat1Line,
+  RiHome6Fill,
+  RiHome6Line,
+} from "react-icons/ri";
 import { useLocation } from "react-router-dom";
-
-import { RiHome6Line } from "react-icons/ri";
-import { RiHome6Fill } from "react-icons/ri";
-
-import { AiOutlineBell } from "react-icons/ai";
-import { AiFillBell } from "react-icons/ai";
-
-import { RiChat1Line } from "react-icons/ri";
-import { RiChat1Fill } from "react-icons/ri";
-
-import { MdPerson } from "react-icons/md";
-import { MdPersonOutline } from "react-icons/md";
-
-import { HiDotsCircleHorizontal } from "react-icons/hi";
-import { HiOutlineDotsCircleHorizontal } from "react-icons/hi";
+import twitterIcon from "./../../Assets/twitterIcon.png";
+import * as S from "./SideMenu.css";
 
 const SideMenu: FC = () => {
   const location = useLocation();
