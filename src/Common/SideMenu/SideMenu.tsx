@@ -26,8 +26,10 @@ import { HiDotsCircleHorizontal } from "react-icons/hi";
 import { HiOutlineDotsCircleHorizontal } from "react-icons/hi";
 
 const SideMenu: FC = () => {
+  //Get browser path
   const location = useLocation();
 
+  //Check which icon to highlight
   const getIfScreenIsActive = (screen: string): boolean => {
     const currentActiveScreen = location.pathname.split("/")[1];
 

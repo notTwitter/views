@@ -5,7 +5,6 @@ import * as S from "./HomeLayout.css";
 const HomeLayout = () => {
   return (
     <>
-      <h1>Helo</h1>
       <SideMenu />
       <S.OutletContainer id="main">
         <Outlet />
