@@ -12,7 +12,6 @@ app.listen(80, () => {
 app.use(cors({
     //Temporary fix
     origin: 'http://localhost:3000',
-    credentials: true
 }));
 app.use(
   session({
@@ -33,8 +32,8 @@ app.get("/test/login", async (req, res) => {
 });
 
 app.get("/test/checkAuth", async (req, res) => {
-  console.log(req.cookies)
   console.log("Requested checkAuth");
+  console.log(req.rawHeaders)
   const isLoggedIn = req.session.loggedIn || false;
   console.log(isLoggedIn);
   res.send({ isLoggedIn: isLoggedIn });
