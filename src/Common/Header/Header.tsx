@@ -1,3 +1,4 @@
+
 /* eslint-disable react/function-component-definition */
 import { FC } from 'react';
 // eslint-disable-next-line no-unused-vars
@@ -18,5 +19,5 @@ const Header: FC = () => (
     </S.Nav>
   </S.Header>
 );
-
+  
 export default Header;

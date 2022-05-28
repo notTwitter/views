@@ -17,7 +17,7 @@ export const Header = styled.header`
 
 export const Nav = styled.nav`
   height: 90%;
-  width: 65%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -27,7 +27,11 @@ export const Nav = styled.nav`
 export const Logo = styled.div`
   width: 50px;
   height: 50px;
-  background-color: white;
+  overflow: hidden;
+  flex-shrink: 0;
+  & img{
+    height: 70%;
+  }
 `;
 
 export const UL = styled.ul`
@@ -50,8 +54,8 @@ export const LI = styled.li`
 
 export const NavLink = styled(Link)`
     color: inherit;
-    font-size: 1.3em;
-    
+    font-size: 1.4em;
+    font-weight: 400;
     &:hover{
       cursor: pointer;
       background-color: #252525;
