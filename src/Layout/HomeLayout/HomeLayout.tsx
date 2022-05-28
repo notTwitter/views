@@ -1,13 +1,14 @@
 import { Outlet } from "react-router-dom"
 import Header from "../../Common/Header/Header"
+import * as S from './HomeLayout.css'
 
 const HomeLayout = () => {
   return (
     <>
         <Header/>
-        <div id="main" style={{marginLeft: 'max(400px, 25%'}}>
+        <S.OutletContainer id="main">
           <Outlet/>
-        </div>
+        </S.OutletContainer>
     </>
   )
 }

@@ -1,17 +1,26 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { inherits } from "util";
 
 export const Header = styled.header`
   position: absolute;
   left: 0;
   top: 0;
-  width: max(25%, 400px);
+  width: 25%; max-width: 500px;
   height: 100vh;
   overflow-y: scroll;
   background-color: black;
   color: white;
   justify-content: flex-end;
+
+  @media all and (max-width: 1350px) {
+    &{
+      width: max(200px, 25%);
+      justify-content: center;
+    }
+    nav{
+      width: fit-content;
+    }
+  }
 `;
 
 export const Nav = styled.nav`
@@ -25,11 +34,11 @@ export const Nav = styled.nav`
 
 export const Logo = styled.div`
   width: 50px;
-  height: 50px;
+  height: 70px;
   overflow: hidden;
   flex-shrink: 0;
   & img{
-    height: 70%;
+    height: 60%;
   }
 `;
 
