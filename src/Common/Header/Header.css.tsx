@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { inherits } from "util";
 
 export const Header = styled.header`
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   width: max(25%, 400px);
@@ -16,7 +16,7 @@ export const Header = styled.header`
 
 export const Nav = styled.nav`
   height: 90%;
-  width: 50%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -55,10 +55,25 @@ export const LI = styled.li`
 
 export const NavLink = styled(Link)`
     color: inherit;
-    font-size: 1.4em;
-    font-weight: 400;
+    height: 80%; 
+    width: auto;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    border-radius: 10px;
+
+    & span{
+      height: fit-content;
+      color: inherit;
+      font-size: 1.2em;
+      font-weight: 500;
+    }
     &:hover{
       cursor: pointer;
       background-color: #252525;
+    }
+    & img{
+      height: 60%;
+      margin-right: 10px;
     }
 `

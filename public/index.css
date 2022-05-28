@@ -9,9 +9,19 @@
   font-family: 'Hind Siliguri', sans-serif;
 }
 
+html{
+  display: flex; align-items: center; justify-content: center;
+}
+
 body {
+  width: min(100%, 2000px);
+  background-color: white;
+}
+
+#root{
+  position: relative;
+  width: 100%;
   min-height: 100vh;
-  max-width: 2000px;
 }
 
 /* Common */
