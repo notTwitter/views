@@ -5,7 +5,7 @@ const HomeLayout = () => {
   return (
     <>
         <Header/>
-        <div id="main" style={{marginLeft: 'min(400px, 30%'}}>
+        <div id="main" style={{marginLeft: 'max(400px, 25%'}}>
           <Outlet/>
         </div>
     </>
