@@ -86,3 +86,19 @@ export const NavLink = styled(Link)`
       margin-right: 10px;
     }
 `
+
+export const TweetButton = styled.button`
+  width: min(200px, 80%);
+  height: 70%;
+  border: 0; outline: 0;
+  border-radius: 30px;
+  color: inherit;
+  font-size: 1.2em;
+  font-weight: 600;
+  background-color:  rgb(29, 155, 240);
+  cursor: pointer;
+
+  &:hover{
+    filter: brightness(0.8)
+  }
+`

@@ -22,6 +22,7 @@ const Header: FC = () => {
           <S.LI><S.NavLink to='/messages'><img src={messagesIconDark} alt="" /><span>Messages</span></S.NavLink></S.LI>
           <S.LI><S.NavLink to='/profile'><img src={accountIconDark} alt="" /><span>Profile</span></S.NavLink></S.LI>
           <S.LI><S.NavLink to='/more'><img src={moreIconDark} alt="" /><span>More</span></S.NavLink></S.LI>
+          <S.LI><S.TweetButton>Tweet</S.TweetButton></S.LI>
          </S.UL>
       </S.Nav>
     </S.Header>
