@@ -1,12 +1,9 @@
-import { FC } from "react";
-import { Link, Outlet } from "react-router-dom";
+/* eslint-disable react/function-component-definition */
+import { FC } from 'react';
+import { Outlet } from 'react-router-dom';
 
-const Layout: FC = () => {
-  return (
-    <>
-      <Outlet />
-    </>
-  );
-};
+const Layout: FC = () => (
+  <Outlet />
+);
 
 export default Layout;

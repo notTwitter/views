@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { inherits } from "util";
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+// eslint-disable-next-line no-unused-vars
+import { inherits } from 'util';
 
 export const Header = styled.header`
   position: fixed;
@@ -29,7 +30,6 @@ export const Logo = styled.div`
   background-color: white;
 `;
 
-
 export const UL = styled.ul`
   margin-top: max(1vw, 10px);
   width: 100%;
@@ -46,8 +46,7 @@ export const LI = styled.li`
     height: 70px;
     display: flex;
     align-items: center;
-`
-
+`;
 
 export const NavLink = styled(Link)`
     color: inherit;
@@ -57,4 +56,4 @@ export const NavLink = styled(Link)`
       cursor: pointer;
       background-color: #252525;
     }
-`
+`;

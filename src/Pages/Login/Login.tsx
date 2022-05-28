@@ -1,11 +1,13 @@
-import { FC } from "react";
+/* eslint-disable react/button-has-type */
+import { FC } from 'react';
 
+// eslint-disable-next-line react/function-component-definition
 const Login: FC = () => {
   const login = (): void => {
-    fetch("http://localhost/test/login", { credentials: "include" });
+    fetch('http://localhost/test/login', { credentials: 'include' });
   };
   const logout = (): void => {
-    fetch("http://localhost/test/logout", { credentials: "include" });
+    fetch('http://localhost/test/logout', { credentials: 'include' });
   };
   return (
     <>
@@ -15,4 +17,4 @@ const Login: FC = () => {
   );
 };
 
-export default Login
+export default Login;
