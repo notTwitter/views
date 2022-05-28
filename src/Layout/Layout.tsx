@@ -1,15 +1,14 @@
-import { FC } from "react"
-import { Link, Outlet } from "react-router-dom"
+import { FC } from "react";
+import { Link, Outlet } from "react-router-dom";
 
-
-const Layout:FC = () => {
+const Layout: FC = () => {
   return (
     <>
-    <Link to='/'>Home</Link>
-    <Link to='/login'>Login</Link>
-    <Outlet/>
+      <Link to="/">Home</Link>
+      <Link to="/login">Login</Link>
+      <Outlet />
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

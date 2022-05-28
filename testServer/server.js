@@ -6,13 +6,16 @@ const PORT = 80;
 const app = express();
 
 app.listen(80, () => {
-    console.log(`Test Server runninng on port ${PORT}`);
-  });
-  
-app.use(cors({
+  console.log(`Test Server runninng on port ${PORT}`);
+});
+
+app.use(
+  cors({
     //Temporary fix
-    origin: 'http://localhost:3000',
-}));
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 app.use(
   session({
     secret: "Super secret secret",
@@ -33,7 +36,6 @@ app.get("/test/login", async (req, res) => {
 
 app.get("/test/checkAuth", async (req, res) => {
   console.log("Requested checkAuth");
-  console.log(req.rawHeaders)
   const isLoggedIn = req.session.loggedIn || false;
   console.log(isLoggedIn);
   res.send({ isLoggedIn: isLoggedIn });
