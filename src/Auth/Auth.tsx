@@ -16,7 +16,7 @@ const Auth: FC = () => {
     {
     isLoggedIn
       ? <Outlet/>
-      : <>Nah Uh</>
+      : <Outlet/>    //<>Nah Uh</>   This should be replaced in production
     }
     </>
   )
