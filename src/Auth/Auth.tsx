@@ -18,10 +18,13 @@ const Auth: FC = () => {
       setIsLoggedIn(data.isLoggedIn);
     });
 
-  // return <>{isLoggedIn ? <Outlet /> : <>Nah Uh... not logged in</>}</>;
-
-  // bypass this
-  return <>{true ? <Outlet /> : <>Nah Uh... not logged in</>}</>;
+  return (
+    <>
+      {
+        isLoggedIn ? <Outlet /> : <Outlet /> //<>Nah Uh</>   This should be replaced in production
+      }
+    </>
+  );
 };
 
 export default Auth;
