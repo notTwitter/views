@@ -1,12 +1,6 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
 import * as S from "./SideMenu.css";
 import twitterIcon from "./../../Assets/twitterIcon.png";
-import homeIcon from "./../../Assets/homeIcon.png";
-import notificationsIconDark from "./../../Assets/notificationsIconDark.png";
-import messagesIconDark from "./../../Assets/messagesIconDark.png";
-import accountIconDark from "./../../Assets/accountIconDark.png";
-import moreIconDark from "./../../Assets/moreIconDark.png";
 
 import { useLocation } from "react-router-dom";
 
