@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
-import Header from "../../Common/Header/Header";
+import SideMenu from "../../Common/SideMenu/SideMenu";
 import * as S from "./HomeLayout.css";
 
 const HomeLayout = () => {
   return (
     <>
       <h1>Helo</h1>
-      <Header />
+      <SideMenu />
       <S.OutletContainer id="main">
         <Outlet />
       </S.OutletContainer>

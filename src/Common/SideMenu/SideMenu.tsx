@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import * as S from "./Header.css";
+import * as S from "./SideMenu.css";
 import twitterIcon from "./../../Assets/twitterIcon.png";
 import homeIcon from "./../../Assets/homeIcon.png";
 import notificationsIconDark from "./../../Assets/notificationsIconDark.png";
@@ -8,7 +8,7 @@ import messagesIconDark from "./../../Assets/messagesIconDark.png";
 import accountIconDark from "./../../Assets/accountIconDark.png";
 import moreIconDark from "./../../Assets/moreIconDark.png";
 
-const Header: FC = () => {
+const SideMenu: FC = () => {
   return (
     <>
       <S.Header className="center">
@@ -57,4 +57,4 @@ const Header: FC = () => {
   );
 };
 
-export default Header;
+export default SideMenu;
