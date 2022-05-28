@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { useNavigate, Outlet } from "react-router-dom";
+import {SERVER} from '../frontend.config'
 
 const Auth: FC = () => {
   //State   !!!Warning. I'm not sure Whether using state here is the best practice.
@@ -10,7 +11,7 @@ const Auth: FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   //Checking backend
-  fetch("http://localhost/test/checkAuth", { credentials: "include" })
+  fetch(`${SERVER}/test/checkAuth`, { credentials: "include" })
     .then((res) => {
       return res.json();
     })

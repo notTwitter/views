@@ -1,11 +1,12 @@
 import { FC } from "react";
+import { SERVER } from "../../frontend.config";
 
 const Login: FC = () => {
   const login = (): void => {
-    fetch("http://localhost/test/login", { credentials: "include" });
+    fetch(`${SERVER}/test/login`, { credentials: "include" });
   };
   const logout = (): void => {
-    fetch("http://localhost/test/logout", { credentials: "include" });
+    fetch(`${SERVER}/test/logout`, { credentials: "include" });
   };
   return (
     <>
