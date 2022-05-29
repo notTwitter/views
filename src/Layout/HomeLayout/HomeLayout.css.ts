@@ -22,3 +22,7 @@ export const OutletContainer = styled.div`
 * there wouldn't be a need to make the sidemenu's position absolute. 
 * This also means that if we set out outlet container to 'flex-grow', we don't need to specify a margin for it.
 */
+
+/* To-Do!
+* - Remove the scroll bars on the overflow scroll containers
+*/
