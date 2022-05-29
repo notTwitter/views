@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+// Project constants
+import { SIDEMENU_BREAK_POINT, SMALL_SIDEMENU_WIDTH } from "../../frontend.config";
+
 export const Header = styled.header`
   position: absolute;
   left: 0;
@@ -12,17 +15,17 @@ export const Header = styled.header`
   color: white;
   overflow-y: scroll;
   background-color: black;
-  justify-content: flex-end;
+  justify-content: center;
 
-  @media all and (max-width: 850px){
-    justify-content: center;
-  }
-    //Removing the text from the buttons
-    & ul a span{
-      display: ${(props:any)=>{           //Ternary operators didn't work when I tried doing this.
-        if(props.smallerSideMenu===true){return 'none'}else{return'flex'}
-      }};
+  @media all and (max-width: ${SIDEMENU_BREAK_POINT}){  //Make the menu smaller 
+    &{
+      width:${SMALL_SIDEMENU_WIDTH};
+      min-width: 0;
     }
+    & ul a span, & button{
+      display: none;
+    }
+  }
 `;
 
 export const Nav = styled.nav`
@@ -41,6 +44,10 @@ export const Logo = styled.div`
   flex-shrink: 0;
   & img {
     height: 55%;
+  }
+
+  @media all and (max-width: ${SIDEMENU_BREAK_POINT}){    //To center the logo
+    width:100%;
   }
 `;
 
@@ -87,6 +94,15 @@ export const NavLink = styled(Link)`
     margin-right: 10px;
     width: 30px;
   }
+
+  @media all and (max-width: ${SIDEMENU_BREAK_POINT}){        //Adjusting the buttons at the break point
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    & svg {margin: 0;}
+  }
 `;
 
 export const TweetButton = styled.button`
@@ -100,6 +116,9 @@ export const TweetButton = styled.button`
   font-weight: 600;
   background-color: rgb(29, 155, 240);
   cursor: pointer;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     filter: brightness(0.8);

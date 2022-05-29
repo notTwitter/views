@@ -42,10 +42,10 @@ const SideMenu: FC = () => {
     if(screenSize>850 && smallerSideMenu!=false){dispatch(setSmallerSideMenu(false))}
   }
   useEffect(()=>{
-    /*Why remove the event listener after component unmounting?
+    /*Why remove the event listener after component unmounts?
     *
-    *1. On each render event listeneres will be added so there'll be many of them
-    *2. Most importantly, event listeners use the state values at the time the EVENT LISTENER WAS FIRST CREATED. The event listener does not recieve or understand changes in state. I like to call it state freeze.
+    *1. On each render event listeners will be added so they'll pile up
+    *2. Most importantly, event listeners use the state values at the time the EVENT LISTENER WAS FIRST CREATED. The event listener does not recieve or understand changes in state. I like to call this 'state freeze'.
     */
     window.addEventListener('resize', checkScreenSize)
     return () => {
@@ -59,7 +59,7 @@ const SideMenu: FC = () => {
   return (
     <>
     {/*@ts-ignore -> TODO!!*/}
-      <S.Header className="center" smallerSideMenu={smallerSideMenu}>
+      <S.Header className="center" smallerSideMenu={smallerSideMenu}>     {/* The props will be used to change the menu appearance according to screen width*/}
         <S.Nav>
           <S.Logo className="center">
             <img src={twitterIcon} alt="Twitter Logo" />

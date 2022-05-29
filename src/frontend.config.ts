@@ -13,3 +13,8 @@ export const SERVER = `${
         ? `http://${PRODUCTION_SERVER_DOMAIN}:${PRODUCTION_SERVER_PORT}`
         : null
 }`
+
+
+//Front-end project constants
+export const SIDEMENU_BREAK_POINT = '850px'
+export const SMALL_SIDEMENU_WIDTH = '70px'
