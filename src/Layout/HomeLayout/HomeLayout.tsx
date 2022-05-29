@@ -10,7 +10,7 @@ const HomeLayout = () => {
         <S.OutletContainer>
           <Outlet />
         </S.OutletContainer>
-      </S.MainSection>
+    </S.MainSection>
     </>
   );
 };
