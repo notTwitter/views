@@ -7,16 +7,16 @@ type T_SideMenu = boolean
 export const mainSlice = createSlice({
     name: 'mainSlice',
     initialState:{
-        smallerSideMenu: null
+        isMobile: null
     },
     reducers:{
-        setSmallerSideMenu: (state, action) => {
+        setIsMobile: (state, action) => {
             const newState = action.payload
-            state.smallerSideMenu = newState
+            state.isMobile = newState
         }
     }
 })
 
 //Exports
-export const {setSmallerSideMenu} = mainSlice.actions
+export const {setIsMobile} = mainSlice.actions
 export default mainSlice.reducer

@@ -1,9 +1,9 @@
 import {configureStore} from '@reduxjs/toolkit'
-import smallerSideMenu from './mainSlice'
+import isMobile from './mainSlice'
 
 
 export default configureStore({
     reducer: {
-        smallerSideMenu: smallerSideMenu
+        isMobile: isMobile
     }
 })

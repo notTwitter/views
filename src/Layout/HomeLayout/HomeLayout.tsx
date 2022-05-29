@@ -6,10 +6,6 @@ import * as S from "./HomeLayout.css";
 
 const HomeLayout = () => {
 
-  //test
-  const [count, setCount] = useState(0)
-  console.log("Render!")
-
   /* Javascript media query to check whether the screen is mobile dimensions
 
   *       Using a **toggle** inside of the query function as the function is called **whenever** the screen size 
@@ -20,6 +16,7 @@ const HomeLayout = () => {
   *       Will have to set a definitive value for isMobile on the very first render,
   *  so will be creating the reducer to accept a toggle & a definitive set in state.
   */
+
   useEffect(() => {
     const toggleMobile = ():void=> {
       // toggle isMobile
