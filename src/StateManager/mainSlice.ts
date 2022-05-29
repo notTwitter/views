@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 //Types
-type T_SideMenu = boolean | null
+type T_SideMenu = boolean 
 
 //The slice
 export const mainSlice = createSlice({

@@ -1,5 +1,11 @@
 import { FC, useEffect, useState } from "react";
 import * as S from "./SideMenu.css";
+
+//Reudux imports
+import { setSmallerSideMenu } from "../../StateManager/mainSlice";
+import {useDispatch, useSelector} from 'react-redux';
+
+//React Icons
 import twitterIcon from "./../../Assets/twitterIcon.png";
 import { useLocation } from "react-router-dom";
 import { RiHome6Line } from "react-icons/ri";
@@ -13,10 +19,12 @@ import { MdPersonOutline } from "react-icons/md";
 import { HiDotsCircleHorizontal } from "react-icons/hi";
 import { HiOutlineDotsCircleHorizontal } from "react-icons/hi";
 
+
 const SideMenu: FC = () => {
 
-  //States
-  const [smallerSideMenu, setSmallerSideMenu] = useState(false)
+  //Redux state
+  const {smallerSideMenu} = useSelector((state:any)=>state.smallerSideMenu)
+  const dispatch = useDispatch()
 
   //Check which icon to highlight
   const location = useLocation();
@@ -30,8 +38,8 @@ const SideMenu: FC = () => {
   //Checking screen size
   const checkScreenSize = ():void => {
     const screenSize = window.innerWidth
-    if(screenSize<850 && smallerSideMenu!=true){setSmallerSideMenu(true)}
-    if(screenSize>850 && smallerSideMenu!=false){setSmallerSideMenu(false)}
+    if(screenSize<850 && smallerSideMenu!=true){dispatch(setSmallerSideMenu(true))}
+    if(screenSize>850 && smallerSideMenu!=false){dispatch(setSmallerSideMenu(false))}
   }
   useEffect(()=>{
     /*Why remove the event listener after component unmounting?
