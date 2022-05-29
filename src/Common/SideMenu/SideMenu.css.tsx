@@ -7,11 +7,15 @@ import {
   SMALL_SIDEMENU_WIDTH,
 } from "../../frontend.config";
 
-export const Header = styled.header`
+export const Header = styled.header`  
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 99;
   width: 25%;
   max-width: 300px;
   min-width: 200px;
-  height: 100%;
+  height: 100vh;
   color: white;
   overflow-y: scroll;
   background-color: black;

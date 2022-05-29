@@ -4,7 +4,7 @@ import { SIDEMENU_BREAK_POINT, SMALL_SIDEMENU_WIDTH } from "../../frontend.confi
 
 export const MainSection = styled.section`
   width: 100%;
-  height: 100vh;
+  max-width: 2000px;
   display: flex;
   flex-direction: row;
   position: relative;
@@ -13,14 +13,16 @@ export const MainSection = styled.section`
 
 export const OutletContainer = styled.div`
   flex-grow: 1;
-  height: 100%;
-  overflow: scroll;
+  z-index: 100;
+  height: 50000px;
 `;
 
 /*
-* If we keep the sidemenu and outlet container static, and make the outlet container overflow with the given content (eg: /home or /notifications)
-* there wouldn't be a need to make the sidemenu's position absolute. 
-* This also means that if we set out outlet container to 'flex-grow', we don't need to specify a margin for it.
+* Note: 
+*       It appears that even though the sidemenu has a position of sticky but the outlet container does not, 
+* the outlet container is pushed to the side anyways. I'm not sure whether this is standard behaviour and whether this will work across all
+* browsers. I thought it might have something to do with both their z-indexes being the same, but after tinkering with it for a bit, the z-index does not appear 
+* to be the reason. I left the z-indexes anyhow.
 */
 
 /* To-Do!
