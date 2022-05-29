@@ -1,29 +1,24 @@
 import { FC, useState } from "react";
+import Login from "./Login/Login";
+import Register from './Register/Register'
 import { Link } from "react-router-dom";
-import { SERVER } from "../../frontend.config";
 
 //Types
-export type CredentialsPropType = {
+type CredentialsPropType = {
   isLogin: boolean
 }
 
-const Login:FC<CredentialsPropType> = (props) => {
-
-
-  const login = (): void => {
-    fetch(`${SERVER}/test/login`, { credentials: "include" });
-  };
+const Credentials:FC<CredentialsPropType> = (props) => {
 
   return (
     <>
       {
         props.isLogin
-          ?   <button onClick={() => login()}>Login</button>
-          :    'Nah'
+          ?   <Login/>
+          :   <Register/>
       }
-      <Link to='/register'>Register</Link>
     </>
   );
 };
 
-export default Login
+export default Credentials
