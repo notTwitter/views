@@ -17,9 +17,9 @@ export const Header = styled.header`
   background-color: black;
   justify-content: center;
 
-  @media all and (max-width: ${SIDEMENU_BREAK_POINT}){  //Make the menu smaller 
+  @media all and (max-width: ${`${SIDEMENU_BREAK_POINT}px`}){  //Make the menu smaller 
     &{
-      width:${SMALL_SIDEMENU_WIDTH};
+      width:  ${`${SMALL_SIDEMENU_WIDTH}px`};
       min-width: 0;
     }
     & ul a span, & button{
@@ -46,7 +46,7 @@ export const Logo = styled.div`
     height: 55%;
   }
 
-  @media all and (max-width: ${SIDEMENU_BREAK_POINT}){    //To center the logo
+  @media all and (max-width: ${`${SIDEMENU_BREAK_POINT}px`}){   //To center the logo
     width:100%;
   }
 `;
@@ -95,7 +95,7 @@ export const NavLink = styled(Link)`
     width: 30px;
   }
 
-  @media all and (max-width: ${SIDEMENU_BREAK_POINT}){        //Adjusting the buttons at the break point
+  @media all and (max-width: ${`${SIDEMENU_BREAK_POINT}px`}){       //Adjusting the buttons at the break point
     display: flex;
     align-items: center; 
     justify-content: center;

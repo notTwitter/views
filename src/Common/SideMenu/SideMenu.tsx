@@ -19,6 +19,9 @@ import { MdPersonOutline } from "react-icons/md";
 import { HiDotsCircleHorizontal } from "react-icons/hi";
 import { HiOutlineDotsCircleHorizontal } from "react-icons/hi";
 
+// Project constants
+import { SIDEMENU_BREAK_POINT, SMALL_SIDEMENU_WIDTH } from "../../frontend.config";
+
 
 const SideMenu: FC = () => {
 
@@ -38,8 +41,8 @@ const SideMenu: FC = () => {
   //Checking screen size
   const checkScreenSize = ():void => {
     const screenSize = window.innerWidth
-    if(screenSize<850 && smallerSideMenu!=true){dispatch(setSmallerSideMenu(true))}
-    if(screenSize>850 && smallerSideMenu!=false){dispatch(setSmallerSideMenu(false))}
+    if(screenSize<SIDEMENU_BREAK_POINT && smallerSideMenu!=true){dispatch(setSmallerSideMenu(true))}
+    if(screenSize>SIDEMENU_BREAK_POINT && smallerSideMenu!=false){dispatch(setSmallerSideMenu(false))}
   }
   useEffect(()=>{
     /*Why remove the event listener after component unmounts?
