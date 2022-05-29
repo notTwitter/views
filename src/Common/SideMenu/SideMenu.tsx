@@ -3,7 +3,7 @@ import * as S from "./SideMenu.css";
 
 //Reudux imports
 import { setSmallerSideMenu } from "../../StateManager/mainSlice";
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 
 //React Icons
 import twitterIcon from "./../../Assets/twitterIcon.png";
@@ -20,49 +20,59 @@ import { HiDotsCircleHorizontal } from "react-icons/hi";
 import { HiOutlineDotsCircleHorizontal } from "react-icons/hi";
 
 // Project constants
-import { SIDEMENU_BREAK_POINT, SMALL_SIDEMENU_WIDTH } from "../../frontend.config";
-
+import {
+  SIDEMENU_BREAK_POINT,
+  SMALL_SIDEMENU_WIDTH,
+} from "../../frontend.config";
 
 const SideMenu: FC = () => {
-
   //Redux state
-  const {smallerSideMenu} = useSelector((state:any)=>state.smallerSideMenu)
-  const dispatch = useDispatch()
+  const { smallerSideMenu } = useSelector(
+    (state: any) => state.smallerSideMenu
+  );
+  const dispatch = useDispatch();
 
   //Check which icon to highlight
   const location = useLocation();
   const getIfScreenIsActive = (screen: string): boolean => {
     const currentActiveScreen = location.pathname.split("/")[1];
-    if (currentActiveScreen.toLowerCase() === screen.toLowerCase()) {return true;}
+    if (currentActiveScreen.toLowerCase() === screen.toLowerCase()) {
+      return true;
+    }
     return false;
   };
 
-
   //Checking screen size
-  const checkScreenSize = ():void => {
-    const screenSize = window.innerWidth
-    if(screenSize<SIDEMENU_BREAK_POINT && smallerSideMenu!=true){dispatch(setSmallerSideMenu(true))}
-    if(screenSize>SIDEMENU_BREAK_POINT && smallerSideMenu!=false){dispatch(setSmallerSideMenu(false))}
-  }
-  useEffect(()=>{
-    /*Why remove the event listener after component unmounts?
-    *
-    *1. On each render event listeners will be added so they'll pile up
-    *2. Most importantly, event listeners use the state values at the time the EVENT LISTENER WAS FIRST CREATED. The event listener does not recieve or understand changes in state. I like to call this 'state freeze'.
-    */
-    window.addEventListener('resize', checkScreenSize)
-    return () => {
-      window.removeEventListener('resize', checkScreenSize)
+  const checkScreenSize = (): void => {
+    const screenSize = window.innerWidth;
+    if (screenSize < SIDEMENU_BREAK_POINT && smallerSideMenu != true) {
+      dispatch(setSmallerSideMenu(true));
     }
-  })
+    if (screenSize > SIDEMENU_BREAK_POINT && smallerSideMenu != false) {
+      dispatch(setSmallerSideMenu(false));
+    }
+  };
+  useEffect(() => {
+    /*Why remove the event listener after component unmounts?
+     *
+     *1. On each render event listeners will be added so they'll pile up
+     *2. Most importantly, event listeners use the state values at the time the EVENT LISTENER WAS FIRST CREATED. The event listener does not recieve or understand changes in state. I like to call this 'state freeze'.
+     */
+    window.addEventListener("resize", checkScreenSize);
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  });
 
   // Checking the screen size manually, only on the FIRST RENDER.
-  useEffect(()=>{checkScreenSize()}, [])
+  useEffect(() => {
+    checkScreenSize();
+  }, []);
 
   return (
     <>
-    {/*@ts-ignore -> TODO!!*/}
-      <S.Header className="center" smallerSideMenu={smallerSideMenu}>     {/* The props will be used to change the menu appearance according to screen width*/}
+      {/*@ts-ignore -> TODO!!*/}
+      <S.Header className="center">
         <S.Nav>
           <S.Logo className="center">
             <img src={twitterIcon} alt="Twitter Logo" />

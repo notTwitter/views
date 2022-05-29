@@ -2,7 +2,10 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 // Project constants
-import { SIDEMENU_BREAK_POINT, SMALL_SIDEMENU_WIDTH } from "../../frontend.config";
+import {
+  SIDEMENU_BREAK_POINT,
+  SMALL_SIDEMENU_WIDTH,
+} from "../../frontend.config";
 
 export const Header = styled.header`
   position: absolute;
@@ -17,12 +20,14 @@ export const Header = styled.header`
   background-color: black;
   justify-content: center;
 
-  @media all and (max-width: ${`${SIDEMENU_BREAK_POINT}px`}){  //Make the menu smaller 
-    &{
-      width:  ${`${SMALL_SIDEMENU_WIDTH}px`};
+  @media all and (max-width: ${`${SIDEMENU_BREAK_POINT}px`}) {
+    //Make the menu smaller
+    & {
+      width: ${`${SMALL_SIDEMENU_WIDTH}px`};
       min-width: 0;
     }
-    & ul a span, & button{
+    & ul a span,
+    & button {
       display: none;
     }
   }
@@ -39,15 +44,16 @@ export const Nav = styled.nav`
 
 export const Logo = styled.div`
   height: 70px;
-  width: 50px;      /*Changing the 50px breaks the alignment. Fix later!*/
+  width: 50px; /*Changing the 50px breaks the alignment. Fix later!*/
   overflow: hidden;
   flex-shrink: 0;
   & img {
     height: 55%;
   }
 
-  @media all and (max-width: ${`${SIDEMENU_BREAK_POINT}px`}){   //To center the logo
-    width:100%;
+  @media all and (max-width: ${`${SIDEMENU_BREAK_POINT}px`}) {
+    //To center the logo
+    width: 100%;
   }
 `;
 
@@ -95,13 +101,16 @@ export const NavLink = styled(Link)`
     width: 30px;
   }
 
-  @media all and (max-width: ${`${SIDEMENU_BREAK_POINT}px`}){       //Adjusting the buttons at the break point
+  @media all and (max-width: ${`${SIDEMENU_BREAK_POINT}px`}) {
+    //Adjusting the buttons at the break point
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
     padding: 0;
     width: 100%;
-    & svg {margin: 0;}
+    & svg {
+      margin: 0;
+    }
   }
 `;
 
@@ -116,7 +125,7 @@ export const TweetButton = styled.button`
   font-weight: 600;
   background-color: rgb(29, 155, 240);
   cursor: pointer;
-  display: flex; 
+  display: flex;
   align-items: center;
   justify-content: center;
 
