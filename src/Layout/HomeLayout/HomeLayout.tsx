@@ -25,19 +25,21 @@ const HomeLayout = () => {
   *  so will be creating the reducer to accept a toggle & a definitive set in state.
   */
 
+  //The check function
   const toggleMobile = ():void=> {
     dispatch(setIsMobile(null))
   }
-  
   //Setting the query in the first render
   useEffect(() => {
     const mobileCheck = window.matchMedia(`(max-width:${MOBILE_BREAK_POINT}px)`)
     mobileCheck.addEventListener('change', toggleMobile)
-    
-    // //Manually checking the matchMedia only for the **first** render
-    // if(mobileCheck.matches===true){
-    //  // isMobile = true
-    // }
+
+    //Making a FIRST render check
+    window.innerWidth<MOBILE_BREAK_POINT
+      ? dispatch(setIsMobile(true))
+      : dispatch(setIsMobile(false))
+
+    //Cleanup function
     return ()=> {
       mobileCheck.removeEventListener('change', toggleMobile)
     }
