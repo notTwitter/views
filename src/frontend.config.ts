@@ -1,6 +1,5 @@
 //Keep project wide constants here
 
-
 // Production constants
 export const IN_PRODUCTION = true
 export const PRODUCTION_SERVER_DOMAIN = 'localhost'
