@@ -20,13 +20,7 @@ export const mainSlice = createSlice({
             * "This could all be shortened to state.isMobile = action.payload ?? !state.isMobile where ?? means "use the left value if it isnt null or undefined, otherwise use the right value""
             *   -Some guy on discord
             */
-            // state.isMobile = action.payload ?? !state.isMobile
-            if(action.payload===null){
-                state.isMobile = !state.isMobile
-            }
-            else{
-                state.isMobile = action.payload
-            }
+            state.isMobile = action.payload ?? !state.isMobile
         } 
     }
 })
