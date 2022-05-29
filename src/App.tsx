@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Auth from "./Auth/Auth";
 import HomeLayout from "./Layout/HomeLayout/HomeLayout";
 import Home from "./Pages/Home/Home";
-import Login from "./Pages/Login/Login";
+import Credentials from "./Pages/Credentials/Credentials";
 
 const App: FC = () => {
   return (
@@ -22,7 +22,8 @@ const App: FC = () => {
             </Route>
 
             {/* Unprotected path */}
-            <Route path="login" element={<Login />} />
+            <Route path="login" element={<Credentials isLogin={true}/>}/>
+            <Route path="register" element={<Credentials isLogin={false}/>} />
           </Route>
         </Routes>
       </BrowserRouter>
