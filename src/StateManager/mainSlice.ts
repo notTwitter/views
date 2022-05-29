@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { CaseReducer, CaseReducerWithPrepare, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 //Types
-interface InterfaceState {
+export interface InterfaceReduxState {
     isMobile: boolean | null
 }
 
@@ -10,24 +10,24 @@ export const mainSlice = createSlice({
     name: 'mainSlice',
     initialState:{
         isMobile: null
-    } as InterfaceState,
+    } as InterfaceReduxState,
     reducers:{
-        setIsMobile: (state, action) => {
+        setIsMobile: (state, action:{payload: boolean|null, type: string }) => {
             /* Reducer actions:
             *  If the reducer payload is empty, it will toggle the state. 
             *  Else, it will set a definitive value.
+            * 
+            * "This could all be shortened to state.isMobile = action.payload ?? !state.isMobile where ?? means "use the left value if it isnt null or undefined, otherwise use the right value""
+            *   -Some guy on discord
             */
-            if(action.payload!=true || action.payload!=false){
-                state.isMobile
-                    ? state.isMobile = true
-                    : state.isMobile = false
+            // state.isMobile = action.payload ?? !state.isMobile
+            if(action.payload===null){
+                state.isMobile = !state.isMobile
             }
             else{
-                /*This means the there is a definitive state*/
-                const newState: boolean = action.payload
-                state.isMobile = newState
+                state.isMobile = action.payload
             }
-        }
+        } 
     }
 })
 

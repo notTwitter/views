@@ -4,9 +4,17 @@ import SideMenu from "../../Common/SideMenu/SideMenu";
 import { MOBILE_BREAK_POINT } from "../../frontend.config";
 import * as S from "./HomeLayout.css";
 
+//Redux imports
+import {useSelector, useDispatch} from 'react-redux'
+import { InterfaceReduxState, setIsMobile } from "../../StateManager/mainSlice";
+
 const HomeLayout = () => {
 
-  /* Javascript media query to check whether the screen is mobile dimensions
+  //Setting up redux
+  const reduxState = useSelector((state:InterfaceReduxState)=> state.isMobile)
+  const dispatch = useDispatch()
+
+  /*       Javascript media query to check whether the screen is mobile dimensions
 
   *       Using a **toggle** inside of the query function as the function is called **whenever** the screen size 
   *  moves through the mobile width border; i.e, both up and down.
@@ -17,17 +25,19 @@ const HomeLayout = () => {
   *  so will be creating the reducer to accept a toggle & a definitive set in state.
   */
 
+  const toggleMobile = ():void=> {
+    dispatch(setIsMobile(null))
+  }
+  
+  //Setting the query in the first render
   useEffect(() => {
-    const toggleMobile = ():void=> {
-      // toggle isMobile
-    }
     const mobileCheck = window.matchMedia(`(max-width:${MOBILE_BREAK_POINT}px)`)
     mobileCheck.addEventListener('change', toggleMobile)
     
-    //Manually checking the matchMedia only for the **first** render
-    if(mobileCheck.matches===true){
-     // isMobile = true
-    }
+    // //Manually checking the matchMedia only for the **first** render
+    // if(mobileCheck.matches===true){
+    //  // isMobile = true
+    // }
     return ()=> {
       mobileCheck.removeEventListener('change', toggleMobile)
     }
