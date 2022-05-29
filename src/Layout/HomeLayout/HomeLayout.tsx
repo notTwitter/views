@@ -5,10 +5,12 @@ import * as S from "./HomeLayout.css";
 const HomeLayout = () => {
   return (
     <>
-      <SideMenu />
-      <S.OutletContainer id="main">
-        <Outlet />
-      </S.OutletContainer>
+    <S.MainSection id="main">
+        <SideMenu />
+        <S.OutletContainer>
+          <Outlet />
+        </S.OutletContainer>
+      </S.MainSection>
     </>
   );
 };

@@ -8,13 +8,10 @@ import {
 } from "../../frontend.config";
 
 export const Header = styled.header`
-  position: absolute;
-  left: 0;
-  top: 0;
   width: 25%;
   max-width: 300px;
   min-width: 200px;
-  height: 100vh;
+  height: 100%;
   color: white;
   overflow-y: scroll;
   background-color: black;
