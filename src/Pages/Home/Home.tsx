@@ -4,7 +4,7 @@ import * as S from './Home.css'
 const Home: FC = () => {
   return (
     <>
-      Home
+      <p style={{color: 'white'}}>Home</p>
     </>
   )
 };
