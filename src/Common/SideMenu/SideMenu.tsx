@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import * as S from "./SideMenu.css";
 import twitterIcon from "./../../Assets/twitterIcon.png";
 import { useLocation } from "react-router-dom";
@@ -14,18 +14,39 @@ import { HiDotsCircleHorizontal } from "react-icons/hi";
 import { HiOutlineDotsCircleHorizontal } from "react-icons/hi";
 
 const SideMenu: FC = () => {
-  //Get browser path
-  const location = useLocation();
+
+  //States
+  const [smallerSideMenu, setSmallerSideMenu] = useState(false)
 
   //Check which icon to highlight
+  const location = useLocation();
   const getIfScreenIsActive = (screen: string): boolean => {
     const currentActiveScreen = location.pathname.split("/")[1];
-
-    if (currentActiveScreen.toLowerCase() === screen.toLowerCase()) {
-      return true;
-    }
+    if (currentActiveScreen.toLowerCase() === screen.toLowerCase()) {return true;}
     return false;
   };
+
+
+  //Checking screen size
+  const checkScreenSize = ():void => {
+    const screenSize = window.innerWidth
+    if(screenSize<850 && smallerSideMenu!=true){setSmallerSideMenu(true)}
+    if(screenSize>850 && smallerSideMenu!=false){setSmallerSideMenu(false)}
+  }
+  useEffect(()=>{
+    /*Why remove the event listener after component unmounting?
+    *
+    *1. On each render event listeneres will be added so there'll be many of them
+    *2. Most importantly, event listeners use the state values at the time the EVENT LISTENER WAS FIRST CREATED. The event listener does not recieve or understand changes in state. I like to call it state freeze.
+    */
+    window.addEventListener('resize', checkScreenSize)
+    return () => {
+      window.removeEventListener('resize', checkScreenSize)
+    }
+  })
+
+  // Checking the screen size manually, only on the FIRST RENDER.
+  useEffect(()=>{checkScreenSize()}, [])
 
   return (
     <>
