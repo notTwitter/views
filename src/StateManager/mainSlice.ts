@@ -12,7 +12,6 @@ export const mainSlice = createSlice({
     reducers:{
         setSmallerSideMenu: (state, action) => {
             const newState = action.payload
-            console.log(newState)
             state.smallerSideMenu = newState
         }
     }
