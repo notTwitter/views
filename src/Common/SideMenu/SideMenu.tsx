@@ -58,7 +58,8 @@ const SideMenu: FC = () => {
 
   return (
     <>
-      <S.Header className="center">
+    {/*@ts-ignore -> TODO!!*/}
+      <S.Header className="center" smallerSideMenu={smallerSideMenu}>
         <S.Nav>
           <S.Logo className="center">
             <img src={twitterIcon} alt="Twitter Logo" />

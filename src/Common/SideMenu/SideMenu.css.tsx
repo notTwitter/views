@@ -9,14 +9,20 @@ export const Header = styled.header`
   max-width: 300px;
   min-width: 200px;
   height: 100vh;
+  color: white;
   overflow-y: scroll;
   background-color: black;
-  color: white;
   justify-content: flex-end;
 
   @media all and (max-width: 850px){
     justify-content: center;
   }
+    //Removing the text from the buttons
+    & ul a span{
+      display: ${(props:any)=>{           //Ternary operators didn't work when I tried doing this.
+        if(props.smallerSideMenu===true){return 'none'}else{return'flex'}
+      }};
+    }
 `;
 
 export const Nav = styled.nav`
