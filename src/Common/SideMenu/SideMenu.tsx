@@ -1,21 +1,15 @@
 import { FC } from "react";
 import * as S from "./SideMenu.css";
 import twitterIcon from "./../../Assets/twitterIcon.png";
-
 import { useLocation } from "react-router-dom";
-
 import { RiHome6Line } from "react-icons/ri";
 import { RiHome6Fill } from "react-icons/ri";
-
 import { AiOutlineBell } from "react-icons/ai";
 import { AiFillBell } from "react-icons/ai";
-
 import { RiChat1Line } from "react-icons/ri";
 import { RiChat1Fill } from "react-icons/ri";
-
 import { MdPerson } from "react-icons/md";
 import { MdPersonOutline } from "react-icons/md";
-
 import { HiDotsCircleHorizontal } from "react-icons/hi";
 import { HiOutlineDotsCircleHorizontal } from "react-icons/hi";
 
