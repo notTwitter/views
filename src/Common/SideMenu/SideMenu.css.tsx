@@ -20,6 +20,7 @@ export const Header = styled.header`
   overflow-y: scroll;
   background-color: black;
   justify-content: center;
+  border-right: 1px solid gray;
 
   @media all and (max-width: ${`${SIDEMENU_BREAK_POINT}px`}) {
     //Make the menu smaller
