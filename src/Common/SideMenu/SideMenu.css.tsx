@@ -12,6 +12,11 @@ export const Header = styled.header`
   overflow-y: scroll;
   background-color: black;
   color: white;
+  justify-content: flex-end;
+
+  @media all and (max-width: 850px){
+    justify-content: center;
+  }
 `;
 
 export const Nav = styled.nav`
@@ -19,13 +24,13 @@ export const Nav = styled.nav`
   width: 90%;
   display: flex;
   flex-direction: column;
-  align-content: center;
+  /* align-items: center; */
   color: inherit;
 `;
 
 export const Logo = styled.div`
-  width: 50px;
   height: 70px;
+  width: 50px;      /*Changing the 50px breaks the alignment. Fix later!*/
   overflow: hidden;
   flex-shrink: 0;
   & img {
