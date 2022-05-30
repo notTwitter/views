@@ -60,10 +60,11 @@ export const ImageContainer = styled.div`
 export const ContentSection = styled.section`
     flex-grow: 1;
     height: 100%;
-    min-height: 700px;
+    min-height: 800px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    justify-content: center;
     /* Tablet mode */
     @media all and (max-width: ${`${TABLET_BREAK_POINT}px`}){
         flex-shrink: 0;
@@ -82,7 +83,6 @@ export const InnerSection = styled.section`
     max-height: 1000px;
     width: 90%;
     max-width: 700px;
-    margin-left: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
