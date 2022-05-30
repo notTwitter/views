@@ -24,7 +24,12 @@ const Login = () => {
     <>
       <S.LoginForm>
         <S.InputContainer>
-          <input type="text" />
+          <input type="text" name="username" />
+          <label htmlFor="username">Username</label>
+        </S.InputContainer>
+        <S.InputContainer>
+          <input type="password" name="password" />
+          <label htmlFor="password">Password</label>
         </S.InputContainer>
       </S.LoginForm>
     </>

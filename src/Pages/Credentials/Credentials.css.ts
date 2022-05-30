@@ -62,7 +62,6 @@ export const ContentSection = styled.section`
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     justify-content: center;
     /* Tablet mode */
     @media all and (max-width: ${`${TABLET_BREAK_POINT}px`}){
@@ -79,13 +78,14 @@ export const ContentSection = styled.section`
 `
 
 export const InnerSection = styled.section`
-    height: 90%; 
+    height: auto;
     max-height: 1000px;
     width: 90%;
     max-width: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     color: white;
 `
 
