@@ -1,4 +1,5 @@
 import styled, { StyledComponent } from 'styled-components'
+import { MOBILE_BREAK_POINT } from '../../../frontend.config'
 
 export const LoginForm = styled.form`
     width: 100%;
@@ -44,6 +45,11 @@ export const InputContainer = styled.div`
     & input:focus ~ label{
         transform: translate(0, -1.8em);
     }
+
+    /* Mobile mode */
+    @media all and (max-width: ${`${MOBILE_BREAK_POINT}px`}){
+        width: min(95%, 300px)
+    }
 `
 
 export const Button= styled.button<{bgColor?: string}>`
@@ -60,6 +66,11 @@ export const Button= styled.button<{bgColor?: string}>`
     cursor: pointer;
     &:hover,  &:focus{
         filter: brightness(0.8)
+    }
+    @media all and (max-width: ${`${MOBILE_BREAK_POINT}px`}){
+        height: 60px;
+        box-sizing: border-box;
+        width:min(300px, 95%);
     }
 `
 

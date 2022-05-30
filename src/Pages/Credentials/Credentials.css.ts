@@ -17,6 +17,10 @@ export const MainSection = styled.section`
         flex-direction: column-reverse;     
         justify-content: flex-end;   
     }
+    /* Mobile mode */
+    @media all and (max-width: ${`${MOBILE_BREAK_POINT}px`}){
+        min-height: 0;
+    }
 `
 
 export const ImageSection = styled.section`
@@ -73,7 +77,8 @@ export const ContentSection = styled.section`
     }
     /* Mobile */
     @media all and (max-width: ${`${MOBILE_BREAK_POINT}px`}){
-        height: 100%;
+        height: auto;
+        min-height: 0;
     }
 `
 
@@ -87,6 +92,10 @@ export const InnerSection = styled.section`
     align-items: center;
     justify-content: center;
     color: white;
+    @media all and (max-width: ${`${MOBILE_BREAK_POINT}px`}){
+        width: 100%;
+        height: 100%;
+    }
 `
 
 export const Title = styled.div`
@@ -99,5 +108,11 @@ export const Title = styled.div`
     }
     & h1 span{
         color: #1D9AEE;
+    }
+    @media all and (max-width: ${`${MOBILE_BREAK_POINT}px`}){
+        margin-top: clamp(20px, 40vw, 100px);
+        & h1, & h1 span{
+            font-size: 40px;
+        }
     }
 `
