@@ -19,9 +19,15 @@ const Login = () => {
 
   return (
     /*
-    * Note that we are now inside the 'InnerSection Component'. This component is a sibling to 'Title'
+    * Note that we are now inside the 'S.InnerSection Component'. This component is a sibling to 'S.Title'
     */
-   <></>
+    <>
+      <S.LoginForm>
+        <S.InputContainer>
+          <input type="text" />
+        </S.InputContainer>
+      </S.LoginForm>
+    </>
   )
 }
 
