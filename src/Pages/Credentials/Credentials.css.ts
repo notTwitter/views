@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MOBILE_BREAK_POINT, TABLET_BREAK_POINT } from "../../frontend.config";
 
 export const MainSection = styled.section`
     width: 100%; 
@@ -10,7 +11,7 @@ export const MainSection = styled.section`
     position: relative;
     color: white;
     /* Tablet mode */
-    @media all and (max-width: 1024px){
+    @media all and (max-width: ${`${TABLET_BREAK_POINT}px`}){
         flex-direction: column-reverse;
     }
 `
@@ -23,14 +24,14 @@ export const ImageSection = styled.section`
         width:30%;
     }
     /* Tablet mode */
-    @media all and (max-width: 1024px){
+    @media all and (max-width: ${`${TABLET_BREAK_POINT}px`}){
         width: 100%;
         height:40vh;
         min-height: 200px;
         flex-shrink: 0;
     }
     /* Mobile */
-    @media all and (max-width: 500px){
+    @media all and (max-width: ${`${MOBILE_BREAK_POINT}px`}){
         display: none;
     }
 `
@@ -45,7 +46,7 @@ export const ImageContainer = styled.div`
         height: 100%;
     }
     /* Tablet mode */
-    @media all and (max-width: 1024px){
+    @media all and (max-width: ${`${TABLET_BREAK_POINT}px`}){
         & img{
             width: 150%;
             height: auto;
@@ -57,14 +58,17 @@ export const ContentSection = styled.section`
     flex-grow: 1;
     height: 100%;
     min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     /* Tablet mode */
-    @media all and (max-width: 1024px){
+    @media all and (max-width: ${`${TABLET_BREAK_POINT}px`}){
         flex-shrink: 0;
         height: 80vh;
         max-height: 800px;
     }
     /* Mobile */
-    @media all and (max-width: 500px){
+    @media all and (max-width: ${`${MOBILE_BREAK_POINT}px`}){
         height: 100%;
     }
 `
