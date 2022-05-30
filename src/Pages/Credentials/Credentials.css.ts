@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { MOBILE_BREAK_POINT, TABLET_BREAK_POINT } from "../../frontend.config";
 
+
+
 export const MainSection = styled.section`
     width: 100%; 
     max-width: 3000px;
@@ -12,7 +14,8 @@ export const MainSection = styled.section`
     color: white;
     /* Tablet mode */
     @media all and (max-width: ${`${TABLET_BREAK_POINT}px`}){
-        flex-direction: column-reverse;
+        flex-direction: column-reverse;     
+        justify-content: flex-end;      /*Solution -> Bug 1*/
     }
 `
 
@@ -28,7 +31,7 @@ export const ImageSection = styled.section`
         width: 100%;
         height:40vh;
         min-height: 200px;
-        flex-shrink: 0;
+        flex-shrink: none;
     }
     /* Mobile */
     @media all and (max-width: ${`${MOBILE_BREAK_POINT}px`}){
@@ -64,7 +67,8 @@ export const ContentSection = styled.section`
     /* Tablet mode */
     @media all and (max-width: ${`${TABLET_BREAK_POINT}px`}){
         flex-shrink: 0;
-        height: 80vh;
+        flex-grow: 0;
+        height: auto;
         max-height: 800px;
     }
     /* Mobile */
