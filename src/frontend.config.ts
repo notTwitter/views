@@ -18,7 +18,7 @@ export const SERVER = `${
 
 
 //Front-end project constants
-export const SIDEMENU_BREAK_POINT = 850     //in px
+export const SIDEMENU_BREAK_POINT = 1024     //in px
 export const SMALL_SIDEMENU_WIDTH = 70      //in px
 export const MOBILE_BREAK_POINT = 500
 export const TABLET_BREAK_POINT = 1024
