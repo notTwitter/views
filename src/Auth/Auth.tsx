@@ -1,14 +1,22 @@
 import { FC, useEffect, useState } from "react";
-import { useNavigate, Outlet } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate, Outlet } from "react-router-dom";
+import LoadingScreen from "../Common/LoadingScreen/LoadingScreen";
 import {SERVER} from '../frontend.config'
+import { InterfaceReduxState } from "../StateManager/mainSlice";
+import { setIsLoggedIn } from "../StateManager/mainSlice";
 
 const Auth: FC = () => {
-  //State   !!!Warning. I'm not sure Whether using state here is the best practice.
 
   // this is good but will reset every time they refresh the browser
   // we probably need to save a cooky or a json web token to still validate them
   // after they close the tab
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  //Redux states
+  //@ts-ignore -> {isLoggedIn} gives a typeerror, but it does work
+  const {isLoggedIn} = useSelector((state:InterfaceReduxState)=> state.isLoggedIn)
+  const dispatch = useDispatch()
+
 
   //Checking backend
   fetch(`${SERVER}/test/checkAuth`, { credentials: "include" })
@@ -16,16 +24,22 @@ const Auth: FC = () => {
       return res.json();
     })
     .then((data) => {
-      setIsLoggedIn(data.isLoggedIn);
+      // setIsLoggedIn(data.isLoggedIn);
     });
 
-  return (
+  //Setting FAKE loading screen for 2 seconds <- Remove when coupling the backend
+  setTimeout(()=>{dispatch(setIsLoggedIn(false))}, 2000)
+
+  if(isLoggedIn===null){
+    return(<LoadingScreen/>)
+  }
+  else{ return (
     <>
       {
-        isLoggedIn ? <Outlet /> : <Outlet /> //<>Nah Uh</>   This should be replaced in production
+        isLoggedIn ? <Outlet /> : <Navigate to='login'/>
       }
     </>
-  );
+  );}
 };
 
 export default Auth;

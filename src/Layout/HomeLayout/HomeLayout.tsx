@@ -11,7 +11,7 @@ import { InterfaceReduxState, setIsMobile } from "../../StateManager/mainSlice";
 const HomeLayout = () => {
 
   //Setting up redux
-  const reduxState = useSelector((state:InterfaceReduxState)=> state.isMobile)
+  const reduxState = useSelector((state:InterfaceReduxState)=> state.isMobile)     // redux state is the complete state object. There is an error when you try to desctructure it
   const dispatch = useDispatch()
 
   //The query initilization

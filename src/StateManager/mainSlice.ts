@@ -2,14 +2,16 @@ import { CaseReducer, CaseReducerWithPrepare, createSlice, PayloadAction } from 
 
 //Types
 export interface InterfaceReduxState {
-    isMobile: boolean | null
+    isMobile: boolean | null,
+    isLoggedIn: boolean | null
 }
 
 //The slice
 export const mainSlice = createSlice({
     name: 'mainSlice',
     initialState:{
-        isMobile: null
+        isMobile: null,
+        isLoggedIn: null
     } as InterfaceReduxState,
     reducers:{
         setIsMobile: (state, action:{payload: boolean|null, type: string }) => {
@@ -21,10 +23,14 @@ export const mainSlice = createSlice({
             *   -Some guy on discord
             */
             state.isMobile = action.payload ?? !state.isMobile
-        } 
+        },
+        setIsLoggedIn: (state, action:{payload: boolean | null, type: string}) =>{
+            const newState = action.payload
+            state.isLoggedIn = newState
+        }
     }
 })
 
 //Exports
-export const {setIsMobile} = mainSlice.actions
+export const {setIsMobile, setIsLoggedIn} = mainSlice.actions
 export default mainSlice.reducer
