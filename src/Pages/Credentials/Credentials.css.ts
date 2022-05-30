@@ -12,7 +12,6 @@ export const MainSection = styled.section`
     /* Tablet mode */
     @media all and (max-width: 1024px){
         flex-direction: column-reverse;
-        max-height: 1366px;
     }
 `
 
@@ -26,8 +25,9 @@ export const ImageSection = styled.section`
     /* Tablet mode */
     @media all and (max-width: 1024px){
         width: 100%;
-        height:60vh;
+        height:40vh;
         min-height: 200px;
+        flex-shrink: 0;
     }
     /* Mobile */
     @media all and (max-width: 500px){
@@ -42,7 +42,6 @@ export const ImageContainer = styled.div`
     position: relative;
     & img{
         position: absolute;
-        left: 0;
         height: 100%;
     }
     /* Tablet mode */
@@ -60,11 +59,12 @@ export const ContentSection = styled.section`
     min-height: 500px;
     /* Tablet mode */
     @media all and (max-width: 1024px){
-        flex-shrink: 1;
+        flex-shrink: 0;
+        height: 80vh;
+        max-height: 800px;
     }
     /* Mobile */
     @media all and (max-width: 500px){
         height: 100%;
-        flex-shrink: 0;
     }
 `
