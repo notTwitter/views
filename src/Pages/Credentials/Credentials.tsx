@@ -22,11 +22,16 @@ const Credentials:FC<CredentialsPropType> = (props) => {
         </S.ImageContainer>
       </S.ImageSection>
       <S.ContentSection>
-        {
-        props.isLogin
-          ?   <Login/>
-          :   <Register/>
-        }
+        <S.InnerSection>
+          <S.Title>
+            <h1><span>not</span>Twitter</h1>
+          </S.Title>
+          {
+            props.isLogin
+              ?   <Login/>
+              :   <Register/>
+          }
+        </S.InnerSection>
       </S.ContentSection>
     </S.MainSection>
   );

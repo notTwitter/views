@@ -72,3 +72,28 @@ export const ContentSection = styled.section`
         height: 100%;
     }
 `
+
+export const InnerSection = styled.section`
+    height: 90%; 
+    max-height: 1000px;
+    width: 90%;
+    max-width: 700px;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+`
+
+export const Title = styled.div`
+    width: 100%;
+    & h1, & h1 span{
+        width: 100%;
+        font-size: 50px;
+        font-weight: 800;
+        text-align: center;
+    }
+    & h1 span{
+        color: #1D9AEE;
+    }
+`

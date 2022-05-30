@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import * as S from './Login.css'
 import { LOGIN_ROUTE, SERVER } from "../../../frontend.config";
 
 const Login = () => {
@@ -17,16 +18,10 @@ const Login = () => {
   };
 
   return (
-    <>
-        <form onSubmit={(e)=>{login(e)}}>
-            <input type="text" name="username" id="" />
-            <label htmlFor="username">Username</label>
-            <input type="password" />
-            <label htmlFor="password">Password</label>
-            <button>Submit</button>
-        </form>
-        <Link to='/register'>Register</Link>
-    </>
+    /*
+    * Note that we are now inside the 'InnerSection Component'. This component is a sibling to 'Title'
+    */
+   <></>
   )
 }
 
