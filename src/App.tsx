@@ -12,7 +12,7 @@ const App: FC = () => {
         <Routes>
           <Route>
             <Route path="/" element={<Auth />}>
-              <Route path="" element={<HomeLayout />}>        {/*The home-layout element defines the layout of the sidemenu*/}
+              <Route path="" element={<HomeLayout />}>        {/*The home-layout element defines the layout of the sidemenu and content*/}
                 <Route index element={<Home />} />
                 <Route path="notifications" element={null} />
                 <Route path="messages" element={null} />

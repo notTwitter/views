@@ -14,22 +14,11 @@ const HomeLayout = () => {
   const reduxState = useSelector((state:InterfaceReduxState)=> state.isMobile)
   const dispatch = useDispatch()
 
-  /*       Javascript media query to check whether the screen is mobile dimensions
-
-  *       Using a **toggle** inside of the query function as the function is called **whenever** the screen size 
-  *  moves through the mobile width border; i.e, both up and down.
-  *  The listener will only be called on the first render. There is no need to re-assign an event listener each time
-  *  because the event listener will not be consulting the current state. There is no need to worry about 'state freeze' (definition inside /retconned/sideMenu.md)
-  * 
-  *       Will have to set a definitive value for isMobile on the very first render,
-  *  so will be creating the reducer to accept a toggle & a definitive set in state.
-  */
-
-  //The check function
+  //The query initilization
   const toggleMobile = ():void=> {
     dispatch(setIsMobile(null))
   }
-  //Setting the query in the first render
+  //Setting the query in the first render. It persists throughtout renders.
   useEffect(() => {
     const mobileCheck = window.matchMedia(`(max-width:${MOBILE_BREAK_POINT}px)`)
     mobileCheck.addEventListener('change', toggleMobile)
