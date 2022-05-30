@@ -25,12 +25,15 @@ const Login = () => {
       <S.LoginForm>
         <S.InputContainer>
           <input type="text" name="username" />
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username">Username[Labels are buggy]</label>
         </S.InputContainer>
         <S.InputContainer>
           <input type="password" name="password" />
           <label htmlFor="password">Password</label>
         </S.InputContainer>
+        <S.Button className="center" bgColor="#1D9AEE">Log in</S.Button>
+        <S.Button className="center" bgColor="#1D3EEE">Join</S.Button>
+        <S.Button className="center" bgColor="#681DEE">Continue as Guest</S.Button>
       </S.LoginForm>
     </>
   )
