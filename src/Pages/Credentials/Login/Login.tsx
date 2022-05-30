@@ -52,7 +52,7 @@ const Login = () => {
       <S.LoginForm onSubmit={(e)=> e.preventDefault()}>
         <S.InputContainer>
           <input type="text" name="username" onChange={(e)=>checkAndMoveLabel(e)}/>
-          <label htmlFor="username" onClick={(e)=>focusInput(e)}>Username[Labels are buggy]</label>
+          <label htmlFor="username" onClick={(e)=>focusInput(e)}>Username</label>
         </S.InputContainer>
         <S.InputContainer>
           <input type="password" name="password" onChange={(e)=>checkAndMoveLabel(e)}/>
