@@ -27,8 +27,8 @@ const Auth: FC = () => {
       // setIsLoggedIn(data.isLoggedIn);
     });
 
-  //Setting FAKE loading screen for 2 seconds <- Remove when coupling the backend
-  setTimeout(()=>{dispatch(setIsLoggedIn(false))}, 2000)
+  //Setting FAKE loading screen for 1 second. This is to simulate the time taken for the api call. <- Remove when coupling the backend + ONLY on the first time, when isLoggedIn is null
+  if(isLoggedIn===null){setTimeout(()=>{dispatch(setIsLoggedIn(false))}, 1000)}
 
   if(isLoggedIn===null){
     return(<LoadingScreen/>)

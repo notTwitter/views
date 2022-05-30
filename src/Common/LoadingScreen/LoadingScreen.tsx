@@ -1,8 +1,18 @@
+import twitterIcon from '../../Assets/twitterIconLarger.png'
 
 
 const LoadingScreen = () => {
   return (
-    <div>LoadingScreen</div>
+    <>
+      <img src={twitterIcon} alt="" style={{height:'100px'}}/>
+      <style>
+        {`
+        #root{
+          align-items: center;
+        }
+        `}
+      </style>
+    </>
   )
 }
 
