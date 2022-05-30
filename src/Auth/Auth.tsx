@@ -28,6 +28,7 @@ const Auth: FC = () => {
     });
 
   //Setting FAKE loading screen for 1 second. This is to simulate the time taken for the api call. <- Remove when coupling the backend + ONLY on the first time, when isLoggedIn is null
+  //As of now, everytime the page is refreshed, the user is redirected to the login page. This will NOT HAPPEN when connected to thebackend.
   if(isLoggedIn===null){setTimeout(()=>{dispatch(setIsLoggedIn(false))}, 1000)}
 
   if(isLoggedIn===null){
