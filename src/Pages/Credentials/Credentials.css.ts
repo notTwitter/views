@@ -15,23 +15,23 @@ export const MainSection = styled.section`
     /* Tablet mode */
     @media all and (max-width: ${`${TABLET_BREAK_POINT}px`}){
         flex-direction: column-reverse;     
-        justify-content: flex-end;      /*Solution -> Bug 1*/
+        justify-content: flex-end;   
     }
 `
 
 export const ImageSection = styled.section`
     width: 50%;
     height: 100%;
-    max-height: 2160px;  
     @media all and (max-width: 1300px){
         width:30%;
     }
     /* Tablet mode */
     @media all and (max-width: ${`${TABLET_BREAK_POINT}px`}){
         width: 100%;
-        height:40vh;
-        min-height: 200px;
-        flex-shrink: none;
+        max-height: 800px;
+        min-height: 500px;
+        height: 50vh;
+        flex-shrink: 0;
     }
     /* Mobile */
     @media all and (max-width: ${`${MOBILE_BREAK_POINT}px`}){
@@ -51,8 +51,8 @@ export const ImageContainer = styled.div`
     /* Tablet mode */
     @media all and (max-width: ${`${TABLET_BREAK_POINT}px`}){
         & img{
-            width: 150%;
-            height: auto;
+            height: 115%;
+            min-height: 900px;
         }
     }
 `
@@ -60,7 +60,7 @@ export const ImageContainer = styled.div`
 export const ContentSection = styled.section`
     flex-grow: 1;
     height: 100%;
-    min-height: 500px;
+    min-height: 700px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -68,8 +68,8 @@ export const ContentSection = styled.section`
     @media all and (max-width: ${`${TABLET_BREAK_POINT}px`}){
         flex-shrink: 0;
         flex-grow: 0;
-        height: auto;
-        max-height: 800px;
+        height: 70vh;
+        max-height: 1000px;
     }
     /* Mobile */
     @media all and (max-width: ${`${MOBILE_BREAK_POINT}px`}){
