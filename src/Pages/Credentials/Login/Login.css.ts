@@ -39,10 +39,11 @@ export const InputContainer = styled.div`
         color: rgb(113, 118, 123);
         background-color: black;
         transition:  transform ease-out 200ms;
+        cursor: text;
     }
 
     /* Label transition */
-    & input:focus ~ label{
+    & input:focus ~ label, & input.move ~ label{              //.move to be added by javascript
         transform: translate(0, -1.8em);
     }
 
