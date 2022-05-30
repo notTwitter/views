@@ -60,7 +60,6 @@ export const ImageContainer = styled.div`
 export const ContentSection = styled.section`
     flex-grow: 1;
     height: 100%;
-    min-height: 800px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -70,6 +69,7 @@ export const ContentSection = styled.section`
         flex-shrink: 0;
         flex-grow: 0;
         height: 70vh;
+        min-height: 800px;
         max-height: 1000px;
     }
     /* Mobile */
