@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import * as S from './Credentials.css'
 
 //Background image
-import credentialsBackground from '../../Assets/twitterLoginImage.png'
+import credentialsBackground from '../../Assets/credentialsBackground.jpg'
 
 //Types
 type CredentialsPropType = {
