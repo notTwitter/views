@@ -63,7 +63,7 @@ const Login = () => {
         </S.InputContainer>
         <S.Button className="center" bgColor="#1D9AEE" onClick={loginUser}>Log in</S.Button>
         <S.Button className="center" bgColor="#1D3EEE">Join</S.Button>
-        <S.Button className="center" bgColor="#681DEE" onClick={useGuestAccount}>Continue as Guest [Click This]</S.Button>
+        <S.Button className="center" bgColor="#681DEE" onClick={useGuestAccount}>Guest</S.Button>
       </S.LoginForm>
     </>
   )

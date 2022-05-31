@@ -47,3 +47,10 @@ const HomeLayout = () => {
 };
 
 export default HomeLayout;
+
+
+/* To do 
+*       When creating the smaller menu for the phone, make a null state for isMobile. When the state is null, the
+*  the loading screen will be displayed.  
+*
+*/
