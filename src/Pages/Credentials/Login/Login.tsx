@@ -11,14 +11,17 @@ const Login = () => {
   const navigate = useNavigate()
 
   //Login function
-  const login = (e:React.FormEvent<HTMLFormElement>): void => {
-    e.preventDefault()
+  const loginUser = (): void => {
     const payload = {}
     fetch(`${SERVER}/${LOGIN_ROUTE}`, {
         method: 'POST', 
-        credentials: "include",
-        body: JSON.stringify(payload)
-     });
+        credentials: "include", //<- Makes sure cookies are being sent
+     })
+     .then((res)=> {return res.json()})
+     .then((data)=> {
+        dispatch(setIsLoggedIn(data.isLoggedIn))
+        navigate('/', {replace: false})
+      })
   };
 
   //Continue as guest function
@@ -58,7 +61,7 @@ const Login = () => {
           <input type="password" name="password" onChange={(e)=>checkAndMoveLabel(e)}/>
           <label htmlFor="password" onClick={(e)=>focusInput(e)}>Password</label>
         </S.InputContainer>
-        <S.Button className="center" bgColor="#1D9AEE">Log in</S.Button>
+        <S.Button className="center" bgColor="#1D9AEE" onClick={loginUser}>Log in</S.Button>
         <S.Button className="center" bgColor="#1D3EEE">Join</S.Button>
         <S.Button className="center" bgColor="#681DEE" onClick={useGuestAccount}>Continue as Guest [Click This]</S.Button>
       </S.LoginForm>

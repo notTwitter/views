@@ -27,11 +27,12 @@ app.use(
   })
 );
 
-app.get("/test/login", async (req, res) => {
+app.post("/test/login", async (req, res) => {
   console.log("Requested login");
   req.session.loggedIn = true;
   console.log("Logged In");
-  res.send("Logged In");
+  const isLoggedIn = req.session.loggedIn || false;
+  res.send({ isLoggedIn: isLoggedIn });
 });
 
 app.get("/test/checkAuth", async (req, res) => {
