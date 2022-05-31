@@ -51,11 +51,13 @@ export const Logo = styled.div`
   flex-shrink: 0;
   & img {
     height: 55%;
+    transform: translateX(5%);
   }
 
   @media all and (max-width: ${`${SIDEMENU_BREAK_POINT}px`}) {
     //To center the logo
     width: 100%;
+    & img{transform :none;}
   }
 `;
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SIDEMENU_BREAK_POINT, SMALL_SIDEMENU_WIDTH } from "../../frontend.config";
+import { SIDEMENU_BREAK_POINT, SMALL_SIDEMENU_WIDTH, TABLET_BREAK_POINT } from "../../frontend.config";
 
 
 export const MainSection = styled.section`
@@ -8,13 +8,20 @@ export const MainSection = styled.section`
   display: flex;
   flex-direction: row;
   position: relative;
+  justify-content: center;
 `
 
 
 export const OutletContainer = styled.div`
-  flex-grow: 1;
-  z-index: 99;
-  height: 50000px;
+  flex-grow: 0;
+  width: clamp(850px, 70vw, 1000px);
+  height: auto;
+  border-right: 1px solid rgb(47,51,54);
+
+  @media all and (max-width: ${`${TABLET_BREAK_POINT}px`}){
+    flex-grow: 1;
+    width: auto;
+  }
 `;
 
 /*
