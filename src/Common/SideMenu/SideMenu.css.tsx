@@ -22,6 +22,10 @@ export const Header = styled.header`
   justify-content: center;
   border-right: 1px solid rgb(47, 51, 54);
 
+  //Removing the scroll bar
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
   @media all and (max-width: ${`${SIDEMENU_BREAK_POINT}px`}) {
     //Make the menu smaller
     & {

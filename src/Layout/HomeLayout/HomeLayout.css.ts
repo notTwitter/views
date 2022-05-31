@@ -15,7 +15,7 @@ export const MainSection = styled.section`
 export const OutletContainer = styled.div`
   flex-grow: 0;
   width: clamp(850px, 70vw, 1000px);
-  height: auto;
+  min-height: 100vh;
   border-right: 1px solid rgb(47,51,54);
 
   @media all and (max-width: ${`${TABLET_BREAK_POINT}px`}){
