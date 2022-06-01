@@ -33,10 +33,10 @@ const Auth: FC = () => {
   //As of now, everytime the page is refreshed, the user is redirected to the login page. This will NOT HAPPEN when connected to thebackend.
   // if(isLoggedIn===null){setTimeout(()=>{dispatch(setIsLoggedIn(false))}, 1000)}
 
-  if (isLoggedIn === null) {
+  if (false) {
     return <LoadingScreen />;
   } else {
-    return <>{isLoggedIn ? <Outlet /> : <Navigate to="login" />}</>;
+    return <>{true ? <Outlet /> : <Navigate to="login" />}</>;
   }
 };
 

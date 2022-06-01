@@ -7,7 +7,7 @@ import {
   SMALL_SIDEMENU_WIDTH,
 } from "../../frontend.config";
 
-export const Header = styled.header`  
+export const Header = styled.header`
   position: sticky;
   left: 0;
   top: 0;
@@ -23,9 +23,11 @@ export const Header = styled.header`
   border-right: 1px solid rgb(47, 51, 54);
 
   //Removing the scroll bar
-  -ms-overflow-style: none; 
+  -ms-overflow-style: none;
   scrollbar-width: none;
-  &::-webkit-scrollbar { display: none; }
+  &::-webkit-scrollbar {
+    display: none;
+  }
   @media all and (max-width: ${`${SIDEMENU_BREAK_POINT}px`}) {
     //Make the menu smaller
     & {
@@ -35,6 +37,21 @@ export const Header = styled.header`
     & ul a span,
     & button {
       display: none;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    & {
+      position: fixed;
+      display: flex;
+      height: 80px;
+      width: 100vw;
+      border-right: none;
+      border-top: 1px solid gray;
+      bottom: 0px;
+      top: calc(100vh - 80px);
+      /* background-color: red; */
+      max-width: none;
     }
   }
 `;
@@ -61,7 +78,15 @@ export const Logo = styled.div`
   @media all and (max-width: ${`${SIDEMENU_BREAK_POINT}px`}) {
     //To center the logo
     width: 100%;
-    & img{transform :none;}
+    & img {
+      transform: none;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    & {
+      display: none;
+    }
   }
 `;
 
@@ -73,6 +98,14 @@ export const UL = styled.ul`
   align-items: center;
   justify-content: center;
   color: inherit;
+
+  @media only screen and (max-width: 500px) {
+    & {
+      flex-direction: row;
+      justify-content: space-between;
+      height: 100%;
+    }
+  }
 `;
 
 export const LI = styled.li`
@@ -81,6 +114,12 @@ export const LI = styled.li`
   height: 70px;
   display: flex;
   align-items: center;
+
+  @media only screen and (max-width: 500px) {
+    & {
+      height: 100%;
+    }
+  }
 `;
 
 export const NavLink = styled(Link)`
@@ -139,5 +178,11 @@ export const TweetButton = styled.button`
 
   &:hover {
     filter: brightness(0.8);
+  }
+
+  @media only screen and (max-width: 500px) {
+    & {
+      display: none;
+    }
   }
 `;

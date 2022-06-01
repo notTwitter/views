@@ -88,7 +88,7 @@ const SideMenu: FC = () => {
                 <span>More</span>
               </S.NavLink>
             </S.LI>
-            <S.LI>
+            <S.LI className="hide-on-mobile">
               <S.TweetButton>Tweet</S.TweetButton>
             </S.LI>
           </S.UL>
