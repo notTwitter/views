@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 // Project constants
 import {
+  MOBILE_BREAK_POINT,
   SIDEMENU_BREAK_POINT,
   SMALL_SIDEMENU_WIDTH,
 } from "../../frontend.config";
@@ -41,14 +42,14 @@ export const Header = styled.header`
     }
   }
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: ${MOBILE_BREAK_POINT}px) {
     & {
       position: fixed;
       display: flex;
       height: 80px;
       width: 100vw;
       border-right: none;
-      border-top: 1px solid gray;
+      border-top: 1px solid rgb(47,51,54);
       bottom: 0px;
       top: calc(100vh - 80px);
       /* background-color: red; */
@@ -84,7 +85,7 @@ export const Logo = styled.div`
     }
   }
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: ${MOBILE_BREAK_POINT}px) {
     & {
       display: none;
     }
@@ -100,7 +101,7 @@ export const UL = styled.ul`
   justify-content: center;
   color: inherit;
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: ${MOBILE_BREAK_POINT}px) {
     & {
       flex-direction: row;
       justify-content: space-between;
@@ -116,7 +117,7 @@ export const LI = styled.li`
   display: flex;
   align-items: center;
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: ${MOBILE_BREAK_POINT}px) {
     & {
       height: 100%;
     }
@@ -181,7 +182,7 @@ export const TweetButton = styled.button`
     filter: brightness(0.8);
   }
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: ${MOBILE_BREAK_POINT}px) {
     & {
       display: none;
     }

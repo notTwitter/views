@@ -47,7 +47,7 @@ const SideMenu: FC = () => {
                 <span>Home</span>
               </S.NavLink>
             </S.LI>
-            <S.LI>
+            <S.LI className="hide-on-mobile">
               <S.NavLink to="/notifications">
                 {getIfScreenIsActive("notifications") ? (
                   <AiFillBell />

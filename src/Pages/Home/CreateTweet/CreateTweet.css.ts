@@ -12,6 +12,7 @@ export const CreateTweetContainer = styled.section`
 `
 
 export const ProfileImage = styled(Link)`
+    flex-shrink: 0;
     height: 60px;
     width: 60px;
     border-radius: 9999px;
@@ -38,6 +39,7 @@ export const TextField = styled.div`
 `
 
 export const TweetButton = styled.button`
+    flex-shrink: 0;
     color: inherit;
     width:80px;
     height: 40px;
