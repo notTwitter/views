@@ -22,7 +22,6 @@ import {
 } from "../../frontend.config";
 
 const SideMenu: FC = () => {
-
   //Check which icon to highlight
   const location = useLocation();
   const getIfScreenIsActive = (screen: string): boolean => {
@@ -32,7 +31,6 @@ const SideMenu: FC = () => {
     }
     return false;
   };
-
 
   return (
     <>
@@ -90,7 +88,7 @@ const SideMenu: FC = () => {
                 <span>More</span>
               </S.NavLink>
             </S.LI>
-            <S.LI>
+            <S.LI className="hide-on-mobile">
               <S.TweetButton>Tweet</S.TweetButton>
             </S.LI>
           </S.UL>
