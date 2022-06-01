@@ -12,17 +12,21 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
 body {
-  width: min(100%, 2000px);
-  background-color: white;
+  background-color: black;
+  height: 100%; 
+  width: 100%;
 }
 
 #root {
   position: relative;
   width: 100%;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
 /* Common */

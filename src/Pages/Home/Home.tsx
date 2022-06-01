@@ -1,7 +1,11 @@
 import { FC } from "react";
 
 const Home: FC = () => {
-  return <>Home</>;
+  return (
+    <>
+      <p style={{ color: "white" }}>Home</p>
+    </>
+  );
 };
 
 export default Home;

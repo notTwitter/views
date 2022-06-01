@@ -1,17 +1,42 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const Header = styled.header`
-  position: absolute;
+// Project constants
+import {
+  SIDEMENU_BREAK_POINT,
+  SMALL_SIDEMENU_WIDTH,
+} from "../../frontend.config";
+
+export const Header = styled.header`  
+  position: sticky;
   left: 0;
   top: 0;
+  z-index: 99;
   width: 25%;
   max-width: 300px;
   min-width: 200px;
   height: 100vh;
+  color: white;
   overflow-y: scroll;
   background-color: black;
-  color: white;
+  justify-content: center;
+  border-right: 1px solid rgb(47, 51, 54);
+
+  //Removing the scroll bar
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+  @media all and (max-width: ${`${SIDEMENU_BREAK_POINT}px`}) {
+    //Make the menu smaller
+    & {
+      width: ${`${SMALL_SIDEMENU_WIDTH}px`};
+      min-width: 0;
+    }
+    & ul a span,
+    & button {
+      display: none;
+    }
+  }
 `;
 
 export const Nav = styled.nav`
@@ -19,17 +44,24 @@ export const Nav = styled.nav`
   width: 90%;
   display: flex;
   flex-direction: column;
-  align-content: center;
+  /* align-items: center; */
   color: inherit;
 `;
 
 export const Logo = styled.div`
-  width: 50px;
   height: 70px;
+  width: 50px; /*Changing the 50px breaks the alignment. Fix later!*/
   overflow: hidden;
   flex-shrink: 0;
   & img {
     height: 55%;
+    transform: translateX(5%);
+  }
+
+  @media all and (max-width: ${`${SIDEMENU_BREAK_POINT}px`}) {
+    //To center the logo
+    width: 100%;
+    & img{transform :none;}
   }
 `;
 
@@ -76,6 +108,18 @@ export const NavLink = styled(Link)`
     margin-right: 10px;
     width: 30px;
   }
+
+  @media all and (max-width: ${`${SIDEMENU_BREAK_POINT}px`}) {
+    //Adjusting the buttons at the break point
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    & svg {
+      margin: 0;
+    }
+  }
 `;
 
 export const TweetButton = styled.button`
@@ -89,6 +133,9 @@ export const TweetButton = styled.button`
   font-weight: 600;
   background-color: rgb(29, 155, 240);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     filter: brightness(0.8);
