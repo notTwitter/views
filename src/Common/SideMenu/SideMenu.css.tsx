@@ -27,6 +27,7 @@ export const Header = styled.header`
   scrollbar-width: none;
   &::-webkit-scrollbar { display: none; }
   @media all and (max-width: ${`${SIDEMENU_BREAK_POINT}px`}) {
+    flex-shrink: 0;                                                 /* <= This is important for the textbox in CreateTweet*/
     //Make the menu smaller
     & {
       width: ${`${SMALL_SIDEMENU_WIDTH}px`};
