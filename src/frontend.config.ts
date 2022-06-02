@@ -1,11 +1,11 @@
 //Keep project wide constants here
 
-// Production constants
+// Frontend
 export const IN_PRODUCTION = true
-export const PRODUCTION_SERVER_DOMAIN = 'localhost'
+export const PRODUCTION_SERVER_DOMAIN = 'localhost'             //API Domain
 export const PRODUCTION_SERVER_PORT = 80
 
-// Deployment constants [To be added]
+// Backend
 export const LOGIN_ROUTE = 'test/login'
 export const REGISTER_ROUTE = 'test/register'
 export const CHECK_AUTH_ROUTE = 'test/checkAuth'

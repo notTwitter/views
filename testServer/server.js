@@ -1,18 +1,17 @@
-const express = require("express");
-const session = require("express-session");
-const cors = require("cors");
-const PORT = 80;
+import express from 'express'
+import session from 'express-session';
+import cors from 'cors'
+import {BACKEND_DOMAIN, BACKEND_PORT, FRONTEND_DOMAIN, FRONTEND_PORT} from './backend.config.js'
 
 const app = express();
 
-app.listen(80, () => {
-  console.log(`Test Server runninng on port ${PORT}`);
+app.listen(BACKEND_PORT, () => {
+  console.log(`Test Server runninng on port ${BACKEND_PORT}`);
 });
 
 app.use(
   cors({
-    //Temporary fix
-    origin: "http://localhost:3000",
+    origin: `http://${FRONTEND_DOMAIN}:${FRONTEND_PORT}`,
     credentials: true,
   })
 );
