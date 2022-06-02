@@ -31,10 +31,9 @@ const CreateTweet = () => {
     fetch(`http://${PRODUCTION_SERVER_DOMAIN}:${PRODUCTION_SERVER_PORT}/${POST_TWEET_ROUTE}`, {
         method: 'POST',
         credentials: 'include',
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
+        headers: {'Content-Type': 'application/json'}                                                     //Without this header, the server won't send back json data
     })
-    .then(res=> {return res.json()})
-    .then(data => console.log(data))
   }
 
   return (

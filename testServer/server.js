@@ -2,8 +2,11 @@ import express from 'express'
 import session from 'express-session';
 import cors from 'cors'
 import {BACKEND_DOMAIN, BACKEND_PORT, FRONTEND_DOMAIN, FRONTEND_PORT} from './backend.config.js'
+import bodyParser from 'body-parser'
+const jsonParser = bodyParser.json()
 
 const app = express();
+
 
 app.listen(BACKEND_PORT, () => {
   console.log(`Test Server runninng on port ${BACKEND_PORT}`);
@@ -40,3 +43,13 @@ app.get("/test/checkAuth", async (req, res) => {
   console.log(isLoggedIn);
   res.send({ isLoggedIn: isLoggedIn });
 });
+
+//Tweet store
+const tweetStore = []
+app.post('/test/postTweet',jsonParser, async(req, res) => {
+  console.log("Requesting postTweet")
+  console.log(req.body)
+  tweetStore.push(req.body)
+  console.log(tweetStore)
+  res.send({success: true})
+})
