@@ -1,6 +1,7 @@
 import { FC } from "react";
 import CreateTweet from "./CreateTweet/CreateTweet";
 import * as S from './Home.css'
+import TweetList from "./TweeList/TweetList";
 
 const Home: FC = () => {
   return (
@@ -11,6 +12,7 @@ const Home: FC = () => {
       </S.Title>
       <S.HomeContent>
         <CreateTweet/>
+        <TweetList/>
       </S.HomeContent>
     </S.HomeContainer>
   )
