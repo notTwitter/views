@@ -9,7 +9,7 @@ export const PRODUCTION_SERVER_PORT = 80
 export const LOGIN_ROUTE = 'test/login'
 export const REGISTER_ROUTE = 'test/register'
 export const CHECK_AUTH_ROUTE = 'test/checkAuth'
-
+export const POST_TWEET_ROUTE = 'test/postTweet'
 // API Proxy
 export const SERVER = `${
     IN_PRODUCTION

@@ -1,20 +1,49 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef} from 'react'
+import { POST_TWEET_ROUTE, PRODUCTION_SERVER_DOMAIN, PRODUCTION_SERVER_PORT } from '../../../frontend.config'
 import * as S from './CreateTweet.css'
 
 /* To do:
 *         Use slate-js or another rich text editor instead of a textfield.
 */
 
+//types
+interface InterfaceTweetPayload {
+  user: string, tweetContent: string
+}
+
 const CreateTweet = () => {
 
+  //Tweet button 
+  const tweetButton = useRef<HTMLButtonElement>(null)
+  const textField = useRef<HTMLTextAreaElement>(null)
+  const clickedTweet = ():void => {
+    if(textField.current!==null && textField.current.value!==''){
+      const tweetContent = textField.current.value
+      const payload = {
+        user: 'user', tweetContent: tweetContent
+      }
+      postToServer(payload)
+    }
+  }
+
+  //Post tweet content to server
+  const postToServer = (payload: InterfaceTweetPayload):void => {
+    fetch(`http://${PRODUCTION_SERVER_DOMAIN}:${PRODUCTION_SERVER_PORT}/${POST_TWEET_ROUTE}`, {
+        method: 'POST',
+        credentials: 'include',
+        body: JSON.stringify(payload)
+    })
+    .then(res=> {return res.json()})
+    .then(data => console.log(data))
+  }
 
   return (
     <S.CreateTweetContainer>
       <S.ProfileImage to='' className='center'>
         <img src='...' alt="" />
       </S.ProfileImage>
-      <S.TextField contentEditable='true' placeholder="What's happening?"></S.TextField>
-      <S.TweetButton>Tweet</S.TweetButton>
+      <S.TextField placeholder="What's happening?" ref={textField}></S.TextField>
+      <S.TweetButton ref={tweetButton} onClick={clickedTweet}>Tweet</S.TweetButton>
     </S.CreateTweetContainer>
   )
 }
