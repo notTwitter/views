@@ -1,11 +1,17 @@
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
-export const TweetContainer = styled.article`
+export const TweetContainer = styled(Link)`
     width: 100%;
     height: auto;
     display: flex;
     padding: 40px 0;
     border-bottom: 1px solid rgb(47,51,54);
+    color: white;
+
+    &:hover{
+        background-color: rgb(10,10,10);
+    }
 `
 
 export const ImageContainer = styled.div`
@@ -32,7 +38,6 @@ export const TextContainer = styled.div`
     flex-direction: column;
     max-width: 80%;
     height: auto;
-    font-size: 1.2em;
 
     & > div{
         width: 100%;
@@ -58,6 +63,7 @@ export const TweetText = styled.div`
         height: auto;
         width: 100%;
         color: inherit;
-        font-size: 1.2em;
+        font-size: 1.1em;
+        cursor: text;
     }
 `
