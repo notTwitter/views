@@ -24,14 +24,17 @@ export const ProfileImage = styled(Link)`
     }
 `
 
-export const TextField = styled.div`
-    min-height: 1.5em;
+export const TextField = styled.textarea`
+    color: inherit;
+    height: 1.3em;
+    resize: none;
     width: 55%;
     flex-grow: 1;
     font-size: 1.2em;
-    overflow: visible;
-    line-break: auto;
     overflow: scroll;
+    background-color:inherit;
+    outline: 0;
+    border: 0;
     &:focus{
         outline: 0;
         border: 0;
