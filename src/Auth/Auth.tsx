@@ -7,10 +7,6 @@ import { InterfaceReduxState } from "../StateManager/mainSlice";
 import { setIsLoggedIn } from "../StateManager/mainSlice";
 
 const Auth: FC = () => {
-  // this is good but will reset every time they refresh the browser
-  // we probably need to save a cooky or a json web token to still validate them
-  // after they close the tab
-
   //Redux states
   //@ts-ignore -> {isLoggedIn} gives a typeerror, but it does work
   const { isLoggedIn } = useSelector(
