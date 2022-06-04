@@ -53,3 +53,9 @@ app.post('/test/postTweet',jsonParser, async(req, res) => {
   console.log(tweetStore)
   res.send({success: true})
 })
+
+//getTweets
+app.get('/test/getTweets/', async(req, res) => {
+  console.log("Requested tweet list")
+  res.send(tweetStore)
+})
