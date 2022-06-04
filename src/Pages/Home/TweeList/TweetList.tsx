@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { GET_TWEETS_ROUTE, PRODUCTION_SERVER_DOMAIN, PRODUCTION_SERVER_PORT } from '../../../frontend.config'
 import { InterfaceReduxState, setTweetData } from '../../../StateManager/mainSlice'
@@ -6,7 +5,7 @@ import * as S from './TweetList.css'
 import TweetModel from './TweetModel/TweetModel'
 
 //Types
-interface Interface_TweetData {
+export interface Interface_TweetData {
   user: string, tweetContent: string
 }
 export type Type_TweetDataArray = Interface_TweetData[] | null
@@ -21,16 +20,16 @@ const TweetList = () => {
   const getTweetData = ():void => {
     fetch(`http://${PRODUCTION_SERVER_DOMAIN}:${PRODUCTION_SERVER_PORT}/${GET_TWEETS_ROUTE}`)
     .then(res => {return res.json()})
-    .then(data=> {console.log(data); dispatch(setTweetData(data))})
+    .then(data=> {dispatch(setTweetData(data))})
   }
 
-  if(tweetData!=null){
+  if(tweetData!==null){
     return(
       <S.TweetListContainer>
       {
-        tweetData.map((tweet:Interface_TweetData)=> {
-          <TweetModel key={'yo'}/>
-        })
+        tweetData.map((tweet:Interface_TweetData)=> (
+          <TweetModel tweetData={tweet}/>
+        ))
       }
       </S.TweetListContainer>
     )
