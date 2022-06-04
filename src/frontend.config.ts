@@ -10,6 +10,7 @@ export const LOGIN_ROUTE = 'test/login'
 export const REGISTER_ROUTE = 'test/register'
 export const CHECK_AUTH_ROUTE = 'test/checkAuth'
 export const POST_TWEET_ROUTE = 'test/postTweet'
+export const GET_TWEETS_ROUTE = 'test/getTweets'
 // API Proxy
 export const SERVER = `${
     IN_PRODUCTION
