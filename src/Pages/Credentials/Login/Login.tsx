@@ -10,12 +10,25 @@ const Login = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
+  const userNameInput = useRef(null)
+  const passWordInput = useRef(null)
+
   //Login function
   const loginUser = (): void => {
-    const payload = {}
+    const payload = {
+      //@ts-ignore
+      userName: userNameInput.current?.value,
+      //@ts-ignore
+      passWord: passWordInput.current?.value
+    }
     fetch(`${SERVER}/${LOGIN_ROUTE}`, {
         method: 'POST', 
-        credentials: "include", //<- Makes sure cookies are being sent
+        credentials: "include", //<- Makes sure cookies are being sent,
+        body: JSON.stringify(payload),
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Request-Method' : 'POST',
+        }
      })
      .then((res)=> {return res.json()})
      .then((data)=> {
@@ -54,11 +67,11 @@ const Login = () => {
     <>
       <S.LoginForm onSubmit={(e)=> e.preventDefault()}>
         <S.InputContainer>
-          <input type="text" name="username" onChange={(e)=>checkAndMoveLabel(e)}/>
+          <input type="text" name="username" ref={userNameInput} onChange={(e)=>checkAndMoveLabel(e)}/>
           <label htmlFor="username" onClick={(e)=>focusInput(e)}>Username</label>
         </S.InputContainer>
         <S.InputContainer>
-          <input type="password" name="password" onChange={(e)=>checkAndMoveLabel(e)}/>
+          <input type="password" name="password" ref={passWordInput} onChange={(e)=>checkAndMoveLabel(e)}/>
           <label htmlFor="password" onClick={(e)=>focusInput(e)}>Password</label>
         </S.InputContainer>
         <S.Button className="center" bgColor="#1D9AEE" onClick={loginUser}>Log in</S.Button>

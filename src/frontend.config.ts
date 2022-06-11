@@ -6,9 +6,9 @@ export const PRODUCTION_SERVER_DOMAIN = 'localhost'             //API Domain
 export const PRODUCTION_SERVER_PORT = 80
 
 // Backend
-export const LOGIN_ROUTE = 'test/login'
+export const LOGIN_ROUTE = 'userHandling/loginUser'
 export const REGISTER_ROUTE = 'test/register'
-export const CHECK_AUTH_ROUTE = 'test/checkAuth'
+export const CHECK_AUTH_ROUTE = 'userHandling/checkAuth'
 export const POST_TWEET_ROUTE = 'test/postTweet'
 export const GET_TWEETS_ROUTE = 'test/getTweets'
 // API Proxy
