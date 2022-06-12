@@ -15,7 +15,6 @@ const TweetList = () => {
   //@ts-ignore  + For some reason the component is rendering twice and the cause is the below code. Not sure why
   const {tweetData} = useSelector((state: InterfaceReduxState) => state.tweetData)
   const dispatch = useDispatch()
-  console.log(tweetData)
 
   //Get tweet data function
   const getTweetData = ():void => {

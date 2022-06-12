@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import * as S from './Login.css'
-import { LOGIN_ROUTE, SERVER } from "../../../frontend.config";
+import { LOGIN_ROUTE, REGISTER_ROUTE, SERVER } from "../../../frontend.config";
 import React, { MouseEvent, useRef } from "react";
 import { setIsLoggedIn } from "../../../StateManager/mainSlice";
 import { useDispatch } from "react-redux";
@@ -36,6 +36,27 @@ const Login = () => {
         navigate('/', {replace: false})
       })
   };
+
+  //Join function
+  const joinUser = ():void => {
+    const payload = {
+      //@ts-ignore
+      userName: userNameInput.current?.value,
+      //@ts-ignore
+      passWord: passWordInput.current?.value
+    }
+    fetch(`${SERVER}/${REGISTER_ROUTE}`, {
+      credentials: 'include',
+      method: 'POST',
+      body: JSON.stringify(payload)
+    })
+    .then(res => {return res.json()})
+    .then(data => {
+      if(data.success===true || data.userAlreadyExists===true){
+        navigate('/', {replace: false})
+      }
+    })
+  }
 
   //Continue as guest function
   const useGuestAccount = () => {
@@ -75,7 +96,7 @@ const Login = () => {
           <label htmlFor="password" onClick={(e)=>focusInput(e)}>Password</label>
         </S.InputContainer>
         <S.Button className="center" bgColor="#1D9AEE" onClick={loginUser}>Log in</S.Button>
-        <S.Button className="center" bgColor="#1D3EEE">Join</S.Button>
+        <S.Button className="center" bgColor="#1D3EEE" onClick={joinUser}>Join</S.Button>
         <S.Button className="center" bgColor="#681DEE" onClick={useGuestAccount}>Guest</S.Button>
       </S.LoginForm>
     </>
