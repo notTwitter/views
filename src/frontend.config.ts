@@ -7,10 +7,10 @@ export const PRODUCTION_SERVER_PORT = 80
 
 // Backend
 export const LOGIN_ROUTE = 'userHandling/loginUser'
-export const REGISTER_ROUTE = 'test/register'
+export const REGISTER_ROUTE = 'userHandling/createUser'
 export const CHECK_AUTH_ROUTE = 'userHandling/checkAuth'
-export const POST_TWEET_ROUTE = 'test/postTweet'
-export const GET_TWEETS_ROUTE = 'test/getTweets'
+export const POST_TWEET_ROUTE = 'postHandling/createPost'
+export const GET_TWEETS_ROUTE = 'postHandling/getHomePosts'
 // API Proxy
 export const SERVER = `${
     IN_PRODUCTION

@@ -22,8 +22,7 @@ const App: FC = () => {
             </Route>
 
             {/* Unprotected path */}
-            <Route path="login" element={<Credentials isLogin={true}/>}/>         {/* The same parent element will be used for both /login and /register ! */}
-            <Route path="register" element={<Credentials isLogin={false}/>} />
+            <Route path="auth" element={<Credentials/>}/>  
           </Route>
         </Routes>
       </BrowserRouter>

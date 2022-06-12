@@ -16,10 +16,10 @@ const TweetModel:FC<Interface_TweetModelProps> = (props) => {      //!!!!Compute
         </S.ImageContainer>
         <S.TextContainer>
             <S.UsernameContainer>
-                <span>{props.tweetData?.user}</span>
+                <span>{props.tweetData?.userName}</span>
             </S.UsernameContainer>
             <S.TweetText> 
-                <p>{props.tweetData?.tweetContent}</p>
+                <p>{props.tweetData?.postContent}</p>
             </S.TweetText>
         </S.TextContainer>
     </S.TweetContainer>

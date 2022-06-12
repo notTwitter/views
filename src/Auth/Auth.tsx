@@ -32,7 +32,7 @@ const Auth: FC = () => {
   if (isLoggedIn === null) {
     return <LoadingScreen />;
   } else {
-    return <>{isLoggedIn ? <Outlet /> : <Navigate to="login" />}</>;
+    return <>{isLoggedIn ? <Outlet /> : <Navigate to="auth" />}</>;
   }
 };
 

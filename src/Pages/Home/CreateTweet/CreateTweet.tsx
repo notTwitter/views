@@ -8,7 +8,7 @@ import * as S from './CreateTweet.css'
 
 //types
 interface InterfaceTweetPayload {
-  user: string, tweetContent: string
+  userName: string, postContent: string
 }
 
 const CreateTweet = () => {
@@ -20,7 +20,7 @@ const CreateTweet = () => {
     if(textField.current!==null && textField.current.value!==''){
       const tweetContent = textField.current.value
       const payload = {
-        user: 'user', tweetContent: tweetContent
+        userName: 'user', postContent: tweetContent
       }
       postToServer(payload)
     }

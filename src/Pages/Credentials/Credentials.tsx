@@ -1,6 +1,5 @@
 import { FC, useState } from "react";
 import Login from "./Login/Login";
-import Register from './Register/Register'
 import { Link } from "react-router-dom";
 import * as S from './Credentials.css'
 
@@ -12,7 +11,7 @@ type CredentialsPropType = {
   isLogin: boolean
 }
 
-const Credentials:FC<CredentialsPropType> = (props) => {
+const Credentials:FC = () => {
 
   return (
     <S.MainSection>
@@ -26,11 +25,7 @@ const Credentials:FC<CredentialsPropType> = (props) => {
           <S.Title>
             <h1><span>not</span>Twitter</h1>
           </S.Title>
-          {
-            props.isLogin
-              ?   <Login/>
-              :   <Register/>
-          }
+          <Login/>
         </S.InnerSection>
       </S.ContentSection>
     </S.MainSection>
