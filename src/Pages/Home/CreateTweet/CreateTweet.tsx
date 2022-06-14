@@ -1,15 +1,22 @@
 import { useRef} from 'react'
 import { POST_TWEET_ROUTE, PRODUCTION_SERVER_DOMAIN, PRODUCTION_SERVER_PORT } from '../../../frontend.config'
 import * as S from './CreateTweet.css'
-
-/* To do:
-*         Use slate-js or another rich text editor instead of a textfield.
-*/
+import TextareaAutosize from 'react-textarea-autosize';
 
 //types
 interface InterfaceTweetPayload {
   userName: string, postContent: string
 }
+
+const TextFieldStyle = {
+  color: 'inherit',
+  fontSize: '50',
+  flexGrow: '1',
+  width: '100%',
+  backgroundColor: 'inherit',
+  outline: '0',
+  border: '0',
+};
 
 const CreateTweet = () => {
 
@@ -41,7 +48,7 @@ const CreateTweet = () => {
       <S.ProfileImage to='' className='center'>
         <img src='...' alt="" />
       </S.ProfileImage>
-      <S.TextField placeholder="What's happening?" ref={textField}></S.TextField>
+      <TextareaAutosize style={TextFieldStyle} className="textArea" placeholder="What's happening?" ref={textField}/>
       <S.TweetButton ref={tweetButton} onClick={clickedTweet}>Tweet</S.TweetButton>
     </S.CreateTweetContainer>
   )
