@@ -16,6 +16,7 @@ const CreateTweet = () => {
   //Tweet button 
   const tweetButton = useRef<HTMLButtonElement>(null)
   const textField = useRef<HTMLTextAreaElement>(null)
+
   const clickedTweet = ():void => {
     if(textField.current!==null && textField.current.value!==''){
       const tweetContent = textField.current.value
@@ -23,6 +24,7 @@ const CreateTweet = () => {
         userName: 'user', postContent: tweetContent
       }
       postToServer(payload)
+      textField.current.value = ""
     }
   }
 
