@@ -65,5 +65,6 @@ export const TweetText = styled.div`
         color: inherit;
         font-size: 1.1em;
         cursor: text;
+        overflow-wrap: anywhere;
     }
 `
