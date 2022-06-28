@@ -6,4 +6,6 @@ export const TweetListContainer = styled.section`
     display: flex;
     flex-direction: column;
     align-items:center;
+    max-width: 100%;
+    word-break: break-all;
 `
